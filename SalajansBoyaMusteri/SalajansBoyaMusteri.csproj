@@ -1,0 +1,2242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F69D7DD-B653-4ED2-BA87-AC49142EFF10}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SalajansBoyaMusteri</RootNamespace>
+    <AssemblyName>SalajansBoyaMusteri</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Asset 5.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BarcodeLib">
+      <HintPath>..\..\..\..\..\Desktop\BarcodeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DYMO.Label.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5426002a38745af9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DYMO\DYMO Label Software\Framework\DYMO.Label.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="webcam_capture, Version=1.0.2087.23475, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Desktop\KameradanGoruntuAlmak\KameradanGoruntuAlmak\bin\Debug\webcam_capture.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Barkod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Barkod.Designer.cs">
+      <DependentUpon>Barkod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calisanlar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="class\AracDisGorselRapor.cs" />
+    <Compile Include="class\BoyaRapor.cs" />
+    <Compile Include="class\DisAydinlatmaRapor.cs" />
+    <Compile Include="class\DonanimRapor.cs" />
+    <Compile Include="class\ElektrikRapor.cs" />
+    <Compile Include="class\extensions.cs" />
+    <Compile Include="class\FrenRapor.cs" />
+    <Compile Include="class\ManuelSanzimanRapor.cs" />
+    <Compile Include="class\MotorRapor.cs" />
+    <Compile Include="class\AASettings.cs" />
+    <Compile Include="class\OnDuzenRapor.cs" />
+    <Compile Include="class\OtoSanzimanRapor.cs" />
+    <Compile Include="class\PrintRapor.cs" />
+    <Compile Include="class\RaporBaslik.cs" />
+    <Compile Include="class\SasiRapor.cs" />
+    <Compile Include="class\SuspansiyonRapor.cs" />
+    <Compile Include="class\TripDsgSanzimanRapor.cs" />
+    <Compile Include="class\YapilanTestlerRapor.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Intro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Intro.Designer.cs">
+      <DependentUpon>Intro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KullaniciGirisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KullaniciGirisi.Designer.cs">
+      <DependentUpon>KullaniciGirisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanicilar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lisans.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="musteri.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OkeyDongle.cs" />
+    <Compile Include="Paketler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PanelForms\Anasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelForms\Anasayfa.Designer.cs">
+      <DependentUpon>Anasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelForms\Ayarlar\AyarlariDegistir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelForms\Ayarlar\AyarlariDegistir.Designer.cs">
+      <DependentUpon>AyarlariDegistir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelForms\Ayarlar\AygitlariYonet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelForms\Ayarlar\AygitlariYonet.Designer.cs">
+      <DependentUpon>AygitlariYonet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelForms\Ayarlar\GenelBilgiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelForms\Ayarlar\GenelBilgiler.Designer.cs">
+      <DependentUpon>GenelBilgiler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelForms\Ayarlar\GuncellemeMerkezi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelForms\Ayarlar\GuncellemeMerkezi.Designer.cs">
+      <DependentUpon>GuncellemeMerkezi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelForms\FullProje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelForms\FullProje.Designer.cs">
+      <DependentUpon>FullProje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelForms\OdemeTakip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelForms\OdemeTakip.Designer.cs">
+      <DependentUpon>OdemeTakip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelForms\MusteriveRaporList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelForms\MusteriveRaporList.Designer.cs">
+      <DependentUpon>MusteriveRaporList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelForms\Rapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelForms\Rapor.Designer.cs">
+      <DependentUpon>Rapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelForms\RaporDosyalariOnizle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelForms\RaporDosyalariOnizle.Designer.cs">
+      <DependentUpon>RaporDosyalariOnizle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelForms\Ayarlar\TestPaketleriniYonet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelForms\Ayarlar\TestPaketleriniYonet.Designer.cs">
+      <DependentUpon>TestPaketleriniYonet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\default.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>default.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Randevular.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBLARACSERISI.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBLARACVERSIYON.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBLMARKA.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBLMODEL.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ARACBOYASONUC.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_BOYADEGERLERI.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_BOYAKONUMLARI.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_Firmalar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_FirmaPCKeys.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_Firma_FK.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_FK.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_iletisim.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_Kullanicilar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_MUSTERIARACLARI.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_MUSTERILER.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ODEMELER.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_YEDEKLER.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UrlDuzenleme.cs" />
+    <Compile Include="Urunler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebBoyaRapor.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yedekparcalistesi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Barkod.resx">
+      <DependentUpon>Barkod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Intro.resx">
+      <DependentUpon>Intro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KullaniciGirisi.resx">
+      <DependentUpon>KullaniciGirisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelForms\Anasayfa.resx">
+      <DependentUpon>Anasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelForms\Ayarlar\AyarlariDegistir.resx">
+      <DependentUpon>AyarlariDegistir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelForms\Ayarlar\AygitlariYonet.resx">
+      <DependentUpon>AygitlariYonet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelForms\Ayarlar\GenelBilgiler.resx">
+      <DependentUpon>GenelBilgiler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelForms\Ayarlar\GuncellemeMerkezi.resx">
+      <DependentUpon>GuncellemeMerkezi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelForms\FullProje.resx">
+      <DependentUpon>FullProje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelForms\OdemeTakip.resx">
+      <DependentUpon>OdemeTakip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelForms\MusteriveRaporList.resx">
+      <DependentUpon>MusteriveRaporList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelForms\Rapor.resx">
+      <DependentUpon>Rapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelForms\RaporDosyalariOnizle.resx">
+      <DependentUpon>RaporDosyalariOnizle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelForms\Ayarlar\TestPaketleriniYonet.resx">
+      <DependentUpon>TestPaketleriniYonet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Debug\SalajansBoyaMusteri.exe.config" />
+    <None Include="bin\Debug\SalajansBoyaMusteri.vshost.exe.config" />
+    <None Include="bin\Debug\SalajansBoyaMusteri.vshost.exe.manifest" />
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\default.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>default.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shadow1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cikis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kapat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tamekran.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\simgedurumu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Asset 5.ico" />
+    <Content Include="bin\Debug\AForge.Video.DirectShow.dll" />
+    <Content Include="bin\Debug\AForge.Video.dll" />
+    <Content Include="bin\Debug\BarcodeLib.dll" />
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Debug\OkeyDongleLibrary.dll" />
+    <Content Include="bin\Debug\Raporlar\13072017-144803\13072017-144803.jpg" />
+    <Content Include="bin\Debug\Raporlar\18072017-140849\18072017-140849.jpg" />
+    <Content Include="bin\Debug\Raporlar\18072017-141005\18072017-141005.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0001594943A\A0001594943A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0034789746A\A0034789746A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0045633270B\A0045633270B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0045633270B\A0045633270Bmotor.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0074108607B\A0074108607B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0140350611B\A0140350611B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0150270573A\A0150270573A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0167350562A\A0167350562A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0200246464A\A0200246464A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0229594058B\A0229594058B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0229594058B\A0229594058BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0229594058B\A0229594058BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0229594058B\A0229594058BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0229594058B\A0229594058BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0248344603A\A0248344603A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0254321195B\A0254321195B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0316530258A\A0316530258A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0365602470B\A0365602470B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0434126708A\A0434126708A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0544916996A\A0544916996A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0544916996A\A0544916996AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0544916996A\A0544916996ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0544916996A\A0544916996AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0544916996A\A0544916996ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0644141666B\A0644141666B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0644141666B\A0644141666BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0652801370A\A0652801370A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0652801370A\A0652801370AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0652801370A\A0652801370ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0673845326A\A0673845326A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0793154896A\A0793154896A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0793154896A\A0793154896AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0793154896A\A0793154896ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0793154896A\A0793154896AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0793154896A\A0793154896ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0827550770B\A0827550770B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0849464658A\A0849464658A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0914858641A\A0914858641A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0914858641A\A0914858641AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0914858641A\A0914858641ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0914858641A\A0914858641AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0914858641A\A0914858641ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0966362444A\A0966362444A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0984838754A\A0984838754A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0995147375B\A0995147375B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0995147375B\A0995147375BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0995147375B\A0995147375BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0995147375B\A0995147375BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A0995147375B\A0995147375BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1034179047B\A1034179047B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1042564679A\A1042564679A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1044699258B\A1044699258B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1081418858B\A1081418858B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1141489802B\A1141489802B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1162863265A\A1162863265A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1212773480B\A1212773480B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1219282655B\A1219282655B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1219881566A\A1219881566A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1233113481B\A1233113481B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1271280950B\A1271280950B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1271280950B\A1271280950BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1271280950B\A1271280950BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1322265986B\A1322265986B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1396496327B\A1396496327B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1442735867A\A1442735867A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1497567846A\A1497567846A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1497567846A\A1497567846AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1497567846A\A1497567846ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1497567846A\A1497567846ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1529088435B\A1529088435B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1529088435B\A1529088435BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1568820764A\A1568820764A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1575705192A\A1575705192A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1575705192A\A1575705192AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1575705192A\A1575705192ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1575705192A\A1575705192AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1575705192A\A1575705192ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1575857463A\A1575857463A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1582241543A\A1582241543A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1743731759A\A1743731759A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1743731759A\A1743731759AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1743731759A\A1743731759ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1743731759A\A1743731759AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1743731759A\A1743731759ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1766837395B\A1766837395B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1782010072A\A1782010072A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1784659662B\A1784659662B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1824816597A\A1824816597A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A1923345118A\A1923345118A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2030913529A\A2030913529A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2114437227B\A2114437227B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2316432482A\A2316432482A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2316432482A\A2316432482AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2316432482A\A2316432482ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2316432482A\A2316432482AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2316432482A\A2316432482ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2337824134A\A2337824134A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2340590332A\A2340590332A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2390819256A\A2390819256A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2390819256A\A2390819256AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2390819256A\A2390819256ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2390819256A\A2390819256AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2390819256A\A2390819256ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2480359034B\A2480359034B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2492698137A\A2492698137A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2564291595A\A2564291595A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2580535792A\A2580535792A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2605545536B\A2605545536B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2605545536B\A2605545536BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2605545536B\A2605545536BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2605545536B\A2605545536BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2605545536B\A2605545536BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2606143493B\A2606143493B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2761383386A\A2761383386A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2763288485B\A2763288485B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2763385393A\A2763385393A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2828931689B\A2828931689B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2953362300A\A2953362300A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2973937957A\A2973937957A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2973937957A\A2973937957AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2973937957A\A2973937957ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2973937957A\A2973937957AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2973937957A\A2973937957ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2979464897B\A2979464897B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2979464897B\A2979464897BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2979464897B\A2979464897BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2979464897B\A2979464897BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A2979464897B\A2979464897BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3040773420A\A3040773420A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3140788221A\A3140788221A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3140788221A\A3140788221AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3140788221A\A3140788221ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3140788221A\A3140788221AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3140788221A\A3140788221ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3245729160B\A3245729160B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3245729160B\A3245729160BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3245729160B\A3245729160BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3245729160B\A3245729160BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3264502973B\A3264502973B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3378398245A\A3378398245A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3378398245A\A3378398245AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3378398245A\A3378398245ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3378398245A\A3378398245AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3378398245A\A3378398245ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3417474555B\A3417474555B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3484031058B\A3484031058B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3510439850B\A3510439850B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3510439850B\A3510439850BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3527320132A\A3527320132A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3573048831B\A3573048831B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3573048831B\A3573048831BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3573048831B\A3573048831BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3573048831B\A3573048831BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3573048831B\A3573048831BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3639772075A\A3639772075A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3646090768B\A3646090768B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3659004504A\A3659004504A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3687660300B\A3687660300B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3689216550A\A3689216550A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3691177456A\A3691177456A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3691177456A\A3691177456AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3735751109A\A3735751109A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3744773168B\A3744773168B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3798055414B\A3798055414B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3810666549A\A3810666549A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3810666549A\A3810666549AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3810666549A\A3810666549ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3810666549A\A3810666549ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3836729080A\A3836729080A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3840699232A\A3840699232A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3864265166B\A3864265166B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A3895477315A\A3895477315A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4010839488A\A4010839488A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4030960384B\A4030960384B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4134364499A\A4134364499A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4136249425A\A4136249425A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4137309668A\A4137309668A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4143919850B\A4143919850B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4160493423B\A4160493423B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4160833676A\A4160833676A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4160833676A\A4160833676AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4160833676A\A4160833676Asanziman.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4196045453A\A4196045453A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4264247748B\A4264247748B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4356997016A\A4356997016A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4466014151A\A4466014151A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4522710578A\A4522710578A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4549969160B\A4549969160B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4603813626A\A4603813626A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4604240309B\A4604240309B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4623033865A\A4623033865A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4702181129A\A4702181129A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4742344238B\A4742344238B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4761180149A\A4761180149A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4761180149A\A4761180149AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4761180149A\A4761180149ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4761180149A\A4761180149AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4761180149A\A4761180149ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4792572318A\A4792572318A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4808813616A\A4808813616A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4808813616A\A4808813616AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4808813616A\A4808813616ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4808813616A\A4808813616Afren.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4808813616A\A4808813616Amotor.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4808813616A\A4808813616AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4808813616A\A4808813616ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4808813616A\A4808813616Asuspansiyon.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4851763390A\A4851763390A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4867721924B\A4867721924B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A4943058014A\A4943058014A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5002524658A\A5002524658A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5002524658A\A5002524658AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5002524658A\A5002524658ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5002524658A\A5002524658AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5002524658A\A5002524658ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5003073994A\A5003073994A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5054816011A\A5054816011A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5085501000A\A5085501000A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5107976865B\A5107976865B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5126162779B\A5126162779B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5153137780B\A5153137780B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5155172713A\A5155172713A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5173693773A\A5173693773A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5277746450A\A5277746450A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5290913459A\A5290913459A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5326109319A\A5326109319A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5466192351B\A5466192351B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5495667897B\A5495667897B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5497505302B\A5497505302B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5504774042B\A5504774042B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5530958187B\A5530958187B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5534565069A\A5534565069A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5566420451A\A5566420451A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5608076087B\A5608076087B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5693060021B\A5693060021B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5693060021B\A5693060021BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5693060021B\A5693060021BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5693060021B\A5693060021BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5693060021B\A5693060021BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5727085240B\A5727085240B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5766214081A\A5766214081A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5822825561A\A5822825561A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5876949971A\A5876949971A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5876949971A\A5876949971AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5876949971A\A5876949971ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A5995829637B\A5995829637B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6029137224B\A6029137224B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6029802981B\A6029802981B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6062108679B\A6062108679B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6063942705A\A6063942705A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6188408893A\A6188408893A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6253573784B\A6253573784B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6310244141B\A6310244141B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6322281256B\A6322281256B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6391196098A\A6391196098A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6396534329A\A6396534329A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6396534329A\A6396534329AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6396534329A\A6396534329ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6396534329A\A6396534329AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6396534329A\A6396534329ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6440074879A\A6440074879A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6508733881A\A6508733881A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6532490607A\A6532490607A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6581455861A\A6581455861A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6585794890B\A6585794890B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6608399091A\A6608399091A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6608399091A\A6608399091AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6652552099B\A6652552099B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6672010050A\A6672010050A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6681161945B\A6681161945B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6681161945B\A6681161945BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6681161945B\A6681161945BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6681161945B\A6681161945BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6681161945B\A6681161945BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6736502279A\A6736502279A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6824526036B\A6824526036B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6882116676A\A6882116676A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6896094200A\A6896094200A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6899906151B\A6899906151B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6908113877A\A6908113877A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6936276475A\A6936276475A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6936276475A\A6936276475AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6936276475A\A6936276475ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6936276475A\A6936276475AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A6936276475A\A6936276475ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7025631403B\A7025631403B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7031079424B\A7031079424B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7096299964A\A7096299964A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7111070158B\A7111070158B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7120970311A\A7120970311A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7139362284B\A7139362284B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7174443260A\A7174443260A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7213218820A\A7213218820A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7230084636B\A7230084636B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7246324528B\A7246324528B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7246875765B\A7246875765B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7329043536A\A7329043536A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7344221248B\A7344221248B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7409906677B\A7409906677B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7412253906A\A7412253906A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7535088123B\A7535088123B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7560871381B\A7560871381B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7562618541B\A7562618541B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7708632895A\A7708632895A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7708632895A\A7708632895AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7708632895A\A7708632895ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7745260387A\A7745260387A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7745260387A\A7745260387AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7745260387A\A7745260387Amotor.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7774251698B\A7774251698B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7811022986A\A7811022986A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7836394251A\A7836394251A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7886179346A\A7886179346A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7886179346A\A7886179346ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7886179346A\A7886179346Afren.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7886179346A\A7886179346AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7886179346A\A7886179346ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7886179346A\A7886179346Asuspansiyon.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7903183636A\A7903183636A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7946478310B\A7946478310B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A7987514421A\A7987514421A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8036652422B\A8036652422B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8069466060B\A8069466060B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8069466060B\A8069466060BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8069466060B\A8069466060BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8075195771B\A8075195771B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8126275356B\A8126275356B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8177343903B\A8177343903B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8204934842A\A8204934842A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8215619360A\A8215619360A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8220892278B\A8220892278B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8291801227A\A8291801227A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8325943675A\A8325943675A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8334456428A\A8334456428A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8349005109A\A8349005109A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8359255610B\A8359255610B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8382177776A\A8382177776A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8398240151B\A8398240151B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8432670941B\A8432670941B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8437969618A\A8437969618A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8496519273A\A8496519273A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8500584260B\A8500584260B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8592398832A\A8592398832A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8705633106A\A8705633106A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8848015815B\A8848015815B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8890425261B\A8890425261B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8891395175A\A8891395175A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8917227256A\A8917227256A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8917227256A\A8917227256AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8917227256A\A8917227256ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8917227256A\A8917227256AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8917227256A\A8917227256ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8922383034A\A8922383034A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8922383034A\A8922383034AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8922383034A\A8922383034ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8935879179B\A8935879179B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8935879179B\A8935879179BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8935879179B\A8935879179BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8935879179B\A8935879179BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8935879179B\A8935879179BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8950359793A\A8950359793A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8950359793A\A8950359793AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8950359793A\A8950359793ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8950359793A\A8950359793AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8950359793A\A8950359793ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8981754050A\A8981754050A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8981754050A\A8981754050AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8981754050A\A8981754050ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A8981754050A\A8981754050ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9097893689B\A9097893689B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9206285074A\A9206285074A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9207248416B\A9207248416B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9219930892A\A9219930892A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9325618795A\A9325618795A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9410687138B\A9410687138B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9410687138B\A9410687138BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9418005915B\A9418005915B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9471243283B\A9471243283B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9565497633B\A9565497633B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9601771801B\A9601771801B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9601771801B\A9601771801BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9601771801B\A9601771801BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9601771801B\A9601771801BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9601771801B\A9601771801BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9636395431B\A9636395431B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9636395431B\A9636395431BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9636395431B\A9636395431BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9636395431B\A9636395431BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9685748825B\A9685748825B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9741151746A\A9741151746A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9769556937A\A9769556937A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9794340761B\A9794340761B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9861764334A\A9861764334A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9943815249B\A9943815249B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9954942250B\A9954942250B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9954942250B\A9954942250BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9954942250B\A9954942250BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9954942250B\A9954942250BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9954942250B\A9954942250BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9980922887A\A9980922887A.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9980922887A\A9980922887AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9980922887A\A9980922887ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9980922887A\A9980922887AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9980922887A\A9980922887ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9999967846B\A9999967846B.jpg" />
+    <Content Include="bin\Debug\Raporlar\A9999967846B\A9999967846BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0017864812A\B0017864812A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0032516390A\B0032516390A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0124508765A\B0124508765A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0124508765A\B0124508765ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0124508765A\B0124508765ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0163438138A\B0163438138A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0207534127A\B0207534127A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0207534127A\B0207534127AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0207534127A\B0207534127ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0207534127A\B0207534127AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0207534127A\B0207534127ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0257068480B\B0257068480B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0289875069A\B0289875069A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0289875069A\B0289875069AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0289875069A\B0289875069ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0318315061A\B0318315061A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0363480371A\B0363480371A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0365250094A\B0365250094A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0404240406A\B0404240406A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0419368414A\B0419368414A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0419368414A\B0419368414AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0419368414A\B0419368414ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0419368414A\B0419368414AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0419368414A\B0419368414ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0425377001A\B0425377001A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0449275644B\B0449275644B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0451375503A\B0451375503A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0457382880B\B0457382880B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0465763079B\B0465763079B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0465763079B\B0465763079BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0500784346B\B0500784346B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0610504834A\B0610504834A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0610504834A\B0610504834AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0610504834A\B0610504834Asanziman.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0644146440A\B0644146440A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0646615507A\B0646615507A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0667859363B\B0667859363B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0673750521A\B0673750521A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0673750521A\B0673750521AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0673750521A\B0673750521ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0673750521A\B0673750521AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0673750521A\B0673750521ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0706844194A\B0706844194A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0706844194A\B0706844194AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0706844194A\B0706844194ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0706844194A\B0706844194AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0706844194A\B0706844194ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0718251607B\B0718251607B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0728961664A\B0728961664A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0762439949B\B0762439949B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0832872796A\B0832872796A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0832872796A\B0832872796AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0833924772A\B0833924772A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0835591836A\B0835591836A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0868913243B\B0868913243B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0876194843A\B0876194843A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0876194843A\B0876194843AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0876194843A\B0876194843ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0876194843A\B0876194843AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0876194843A\B0876194843ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0890548346B\B0890548346B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B0950407047B\B0950407047B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1007092844A\B1007092844A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1007092844A\B1007092844AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1098804750B\B1098804750B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1116198503B\B1116198503B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1116198503B\B1116198503BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1116198503B\B1116198503BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1116198503B\B1116198503BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1116198503B\B1116198503BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1116878496B\B1116878496B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1143430821A\B1143430821A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1143430821A\B1143430821AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1143430821A\B1143430821ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1143430821A\B1143430821ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1271444442A\B1271444442A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1347699145B\B1347699145B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1404958248B\B1404958248B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1537468144B\B1537468144B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1648556400A\B1648556400A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1685843260A\B1685843260A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1694481921B\B1694481921B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1703943862B\B1703943862B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1775971525A\B1775971525A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1775971525A\B1775971525AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1775971525A\B1775971525ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1775971525A\B1775971525AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1775971525A\B1775971525ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1908184631A\B1908184631A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1962173616A\B1962173616A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1962173616A\B1962173616AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B1962173616A\B1962173616ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2001592355B\B2001592355B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2036019901A\B2036019901A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2036019901A\B2036019901AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2036019901A\B2036019901ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2071831261A\B2071831261A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2091323804B\B2091323804B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2131326530A\B2131326530A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2157479095B\B2157479095B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2158022923B\B2158022923B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2161669740B\B2161669740B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2329271858A\B2329271858A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2353538658B\B2353538658B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2366043872A\B2366043872A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2399169177B\B2399169177B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2399169177B\B2399169177BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2399169177B\B2399169177BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2399169177B\B2399169177BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2399169177B\B2399169177BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2420385149B\B2420385149B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2432239401A\B2432239401A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2469978110B\B2469978110B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2478703425B\B2478703425B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2525327032A\B2525327032A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2526819097A\B2526819097A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2526819097A\B2526819097AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2526819097A\B2526819097ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2531666421A\B2531666421A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2559799496B\B2559799496B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2599243811B\B2599243811B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2701337922B\B2701337922B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2783788040B\B2783788040B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2791248102A\B2791248102A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2800823234A\B2800823234A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2803111209B\B2803111209B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2823570212B\B2823570212B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2823570212B\B2823570212BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2823570212B\B2823570212BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2823570212B\B2823570212BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2836960070A\B2836960070A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2862049242A\B2862049242A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2876703368A\B2876703368A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2876703368A\B2876703368AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2876703368A\B2876703368ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2876703368A\B2876703368AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2876703368A\B2876703368ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2888001347B\B2888001347B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B2998346688B\B2998346688B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3026447205B\B3026447205B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3039475966A\B3039475966A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3096596668B\B3096596668B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3096596668B\B3096596668BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3096596668B\B3096596668BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3096596668B\B3096596668BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3132466205B\B3132466205B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3209970780A\B3209970780A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3288129152B\B3288129152B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3290145091B\B3290145091B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3371914872B\B3371914872B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3391715172A\B3391715172A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3423739670B\B3423739670B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3580667259A\B3580667259A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3602679607A\B3602679607A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3708665238A\B3708665238A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3759311098A\B3759311098A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3759311098A\B3759311098AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3759311098A\B3759311098ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3759311098A\B3759311098Adisaydinlatma.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3759311098A\B3759311098Adonanim.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3759311098A\B3759311098Afren.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3759311098A\B3759311098Amotor.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3759311098A\B3759311098AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3759311098A\B3759311098Asanziman.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3759311098A\B3759311098ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3759311098A\B3759311098Asuspansiyon.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3874727425A\B3874727425A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3894441263B\B3894441263B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3905077191A\B3905077191A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B3971580013B\B3971580013B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4092708033B\B4092708033B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4108193581B\B4108193581B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4200108264B\B4200108264B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4202168479B\B4202168479B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4258028977A\B4258028977A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4283348869A\B4283348869A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4285363807B\B4285363807B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4295807783B\B4295807783B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4327921707B\B4327921707B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4339125444A\B4339125444A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4348488033A\B4348488033A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4366557023A\B4366557023A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4374763234A\B4374763234A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4381014790A\B4381014790A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4520082560A\B4520082560A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4589503755A\B4589503755A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4589503755A\B4589503755AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4589503755A\B4589503755ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4693287284B\B4693287284B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4810216960A\B4810216960A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4810251123A\B4810251123A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4874755681A\B4874755681A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4875661859B\B4875661859B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4875661859B\B4875661859BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4875661859B\B4875661859BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4875661859B\B4875661859BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4875661859B\B4875661859BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4934025302A\B4934025302A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4934025302A\B4934025302AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4934025302A\B4934025302ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4934025302A\B4934025302AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4934025302A\B4934025302ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4939305561A\B4939305561A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B4948014541B\B4948014541B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5123436829A\B5123436829A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5171535536A\B5171535536A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5183587312B\B5183587312B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5186645318A\B5186645318A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5203722666A\B5203722666A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5206024725A\B5206024725A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5249408379B\B5249408379B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5249408379B\B5249408379BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5249408379B\B5249408379BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5291450299A\B5291450299A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5294919102A\B5294919102A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5341965873B\B5341965873B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5341965873B\B5341965873BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5341965873B\B5341965873BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5341965873B\B5341965873BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5341965873B\B5341965873BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5370604830A\B5370604830A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5371122502A\B5371122502A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5371122502A\B5371122502AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5371122502A\B5371122502ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5378422021A\B5378422021A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5389108542B\B5389108542B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5414685299B\B5414685299B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5462455197A\B5462455197A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5495018465A\B5495018465A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5541284825B\B5541284825B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5635606312A\B5635606312A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5636270448A\B5636270448A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5636270448A\B5636270448Amotor.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5637890516B\B5637890516B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5692252978B\B5692252978B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5692252978B\B5692252978BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5692252978B\B5692252978BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5713153117A\B5713153117A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5790961238B\B5790961238B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5790961238B\B5790961238BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5790961238B\B5790961238BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5790961238B\B5790961238BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5790961238B\B5790961238BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5791192149A\B5791192149A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B5803584470B\B5803584470B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6068045711B\B6068045711B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6141241229B\B6141241229B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6148520141A\B6148520141A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6148520141A\B6148520141AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6148520141A\B6148520141ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6160453246A\B6160453246A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6206398878B\B6206398878B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6206398878B\B6206398878BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6206398878B\B6206398878BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6206398878B\B6206398878BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6206398878B\B6206398878BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6230529547B\B6230529547B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6316334923A\B6316334923A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6341436787B\B6341436787B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6351956727A\B6351956727A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6357097297A\B6357097297A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6375283558A\B6375283558A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6395226940A\B6395226940A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6452605084A\B6452605084A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6563551918B\B6563551918B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6609189447A\B6609189447A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6609189447A\B6609189447AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6609189447A\B6609189447ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6609189447A\B6609189447AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6609189447A\B6609189447ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6622114087B\B6622114087B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6638745199A\B6638745199A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6661362582A\B6661362582A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6683421341B\B6683421341B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6693603046A\B6693603046A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6779503303B\B6779503303B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6788704885A\B6788704885A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6813997529A\B6813997529A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6822337005A\B6822337005A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6834378739B\B6834378739B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6963332821B\B6963332821B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B6981993878B\B6981993878B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7012178423A\B7012178423A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7021626486A\B7021626486A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7033663723B\B7033663723B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7033663723B\B7033663723BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7033663723B\B7033663723BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7033663723B\B7033663723BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7033663723B\B7033663723BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7101771790B\B7101771790B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7111972483A\B7111972483A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7117250083B\B7117250083B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7122561710A\B7122561710A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7184150401A\B7184150401A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7188165553B\B7188165553B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7287102167A\B7287102167A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7287102167A\B7287102167AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7296297099A\B7296297099A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7380544313B\B7380544313B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7380544313B\B7380544313BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7380544313B\B7380544313BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7380544313B\B7380544313BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7380544313B\B7380544313BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7409384697B\B7409384697B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7473014746B\B7473014746B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7540072396B\B7540072396B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7553890071B\B7553890071B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7585861343B\B7585861343B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7593419269A\B7593419269A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7593419269A\B7593419269AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7593419269A\B7593419269ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7593419269A\B7593419269AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7593419269A\B7593419269ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7646774761A\B7646774761A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7669061765B\B7669061765B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7810870617B\B7810870617B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7810870617B\B7810870617BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7810870617B\B7810870617BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7810870617B\B7810870617BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7810870617B\B7810870617BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B7925319678B\B7925319678B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8057776445B\B8057776445B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8057776445B\B8057776445BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8057776445B\B8057776445BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8057776445B\B8057776445BOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8057776445B\B8057776445BSasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8105868314A\B8105868314A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8192342656B\B8192342656B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8202862744B\B8202862744B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8211950121A\B8211950121A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8290217121B\B8290217121B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8290217121B\B8290217121BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8290217121B\B8290217121BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8328008957A\B8328008957A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8329085071A\B8329085071A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8359621603B\B8359621603B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8426950033A\B8426950033A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8426950033A\B8426950033AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8475228333A\B8475228333A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8475228333A\B8475228333AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8475228333A\B8475228333ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8475228333A\B8475228333AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8475228333A\B8475228333ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8560769110B\B8560769110B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8579020411A\B8579020411A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8579679248A\B8579679248A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8580241849A\B8580241849A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8586168847A\B8586168847A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8590688208A\B8590688208A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8648752288A\B8648752288A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8648752288A\B8648752288AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8648752288A\B8648752288ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8674244222A\B8674244222A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8939164454B\B8939164454B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8986789276A\B8986789276A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B8991861030B\B8991861030B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9059851481A\B9059851481A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9104060894A\B9104060894A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9108814467B\B9108814467B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9126584265A\B9126584265A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9177545317A\B9177545317A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9191897559B\B9191897559B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9193638066B\B9193638066B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9329662651B\B9329662651B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9430847827B\B9430847827B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9456656266B\B9456656266B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9456656266B\B9456656266BAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9456656266B\B9456656266BBoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9479237418A\B9479237418A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9510733704A\B9510733704A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9515837458A\B9515837458A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9610538896B\B9610538896B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9665860523A\B9665860523A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9665860523A\B9665860523AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9665860523A\B9665860523ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9665860523A\B9665860523AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9665860523A\B9665860523ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9695670994A\B9695670994A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9759328932A\B9759328932A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9779416744A\B9779416744A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9802572092A\B9802572092A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9802572092A\B9802572092AAnasayfa.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9802572092A\B9802572092ABoya.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9802572092A\B9802572092AOnDuzen.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9802572092A\B9802572092ASasi.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9810703068A\B9810703068A.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9881165154B\B9881165154B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9905285690B\B9905285690B.jpg" />
+    <Content Include="bin\Debug\Raporlar\B9964386918B\B9964386918B.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\10227\10227.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\10229\10229.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\10230\10230.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\10231\10231.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\10232\10232.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\10233\10233.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\10234\10234.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\10235\10235.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\10237\10237.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\10239\10239.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\10240\10240.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\10241\10241.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1176\1176.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1177\1177.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1179\1179.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1180\1180.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1181\1181.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1183\1183.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1184\1184.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1185\1185.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1186\1186.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1187\1187.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1188\1188.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1189\1189.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1190\1190.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1191\1191.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1192\1192.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1193\1193.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1194\1194.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1195\iskitlerresim.bmp" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1196\1196.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1197\1197.png" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1198\1198.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1199\1199.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1200\1200.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1201\1201.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1202\1202.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1203\1203.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1204\1204.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1205\1205.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\1206\1206.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14322\14322.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14323\14323.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14324\14324.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14326\14326.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14327\14327 .jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14331\14331.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14332\14332.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14333\14333.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14334\14334.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14336\14336.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14337\14337.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14339\14339.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14340\14340.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14342\14342.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14343\14343.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14344\14344.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14345\14345.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14346\14346.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14347\14347.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14348\14348.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14349\14349.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14350\14350.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14351\14351.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14353\14353.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14354\14354.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14355\14355.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14356\14356.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14357\14357.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14359\14359.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14360\14360.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14361\14361.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14362\14362.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14363\14363.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14365\14365.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14367\14367.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14369\14369.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14370\14370.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14371\14371.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14372\14372.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14373\14373.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14374\14374.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14375\14375.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14376\14376.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14377\14377.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14378\14378.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14379\14379.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14380\14380.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14383\14383.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14385\14385.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14386\14386.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14387\14387.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14388\14388.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14389\14389.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14391\14391.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14392\14392.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14393\14393.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14394\14394.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14395\14395.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14396\14396.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14397\14397.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14398\14398.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14399\14399.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14400\14400.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14401\14401.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14402\14402.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14403\14403.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14404\14404.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14405\14405.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14406\14406.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14407\14407.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14408\14408.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14409\14409.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14410\14410.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14412\14412.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\14413\14413.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\15368\15368.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\15369\15369.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\15370\15370.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\15373\15373.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\15375\15375.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\15376\15376.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\15377\15377.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\15378\15378.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\15379\15379.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\15381\15381.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\15382\15382.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\15383\15383.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16368\16368.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16369\16369.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16370\16370.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16371\16371.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16372\16372.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16373\16373.png" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16375\16375.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16376\16376.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16377\16377.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16378\16378.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16381\16381.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16382\16382.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16384\16384.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16385\16385.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16388\16388.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16389\16389.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16390\16390.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16391\16391.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16392\16392.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16393\16393.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16394\16394.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16395\16395.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16396\16396.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16397\16397.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16398\16398.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\16400\16400.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17368\17368.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17369\17369.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17370\17370.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17372\17372.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17373\17373.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17374\17374.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17375\17375.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17376\17376.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17377\17377.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17378\17378.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17379\17379.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17380\17380.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17381\17381.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17382\17382.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17383\17383.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17384\17384.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17385\17385.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17387\17387.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17388\17388.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17389\17389.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17390\17390.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17391\17391.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17392\17392.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17393\17393.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17394\17394.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17395\17395.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\17396\17396.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\2176\2176.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\2178\2178.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\2179\2179.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\2180\2180.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\2181\2181.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\2183\2183.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\2184\2184.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\2185\2185.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\2186\2186.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\2188\2188.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\2189\2189.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\2190\2190.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\2191\2191.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\2192\2192.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\2193\2193.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\2194\2194.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22488\22488.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22490\22490.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22491\22491.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22493\22493.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22494\22494.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22495\22495.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22497\22497.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22498\22498.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22500\22500.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22501\22501.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22502\22502.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22503\22503.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22504\22504.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22505\22505.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22506\22506.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22507\22507.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22508\22508.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22509\22509.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22511\22511.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22512\22512.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22514\22514.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22515\22515.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22516\22516.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22517\22517.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22518\22518.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22519\22519.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22521\22521.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22522\22522.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22523\22523.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22525\22525.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22527\22527.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22529\22529.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22530\22530.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22531\22531.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22533\22533.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22534\22534.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22535\22535.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22537\22537.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22538\22538.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22539\22539.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22540\22540.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22541\22541.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22542\22542.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22543\22543.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22544\22544.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22545\22545.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22546\22546.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22547\22547.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22548\22548.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22549\22549.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22550\22550.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22551\22551.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22552\22552.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22553\22553.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22554\22554.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22555\22555.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22556\22556.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22557\22557.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22559\22559.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22560\22560.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22561\22561.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22562\22562.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22563\22563.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22565\22565.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22566\22566.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22567\22567.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22568\22568.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22569\22569.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22570\22570.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22571\22571.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22572\22572.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22573\22573.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22574\22574.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22576\22576.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22577\22577.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22578\22578.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22579\22579.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22581\22581.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\22582\22582.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23540\23540.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23541\23541.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23543\23543.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23544\23544.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23545\23545.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23547\23547.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23548\23548.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23549\23549.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23550\23550.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23551\23551.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23552\23552.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23553\23553.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23554\23554.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23555\23555.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23556\23556.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23557\23557.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23560\23560.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23562\23562.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23564\23564.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\23566\23566.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\24555\24555.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\24556\24556.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\24557\24557.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\24558\24558.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\24559\24559.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\24560\24560.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\24561\24561.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\24562\24562.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25555\25555.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25556\25556.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25557\25557.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25558\25558.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25559\25559.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25560\25560.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25561\25561.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25562\25562.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25567\25567.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25570\25570.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25572\25572.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25573\25573.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25574\25574.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25575\25575.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25576\25576.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25577\25577.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25579\25579.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25580\25580.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25581\25581.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25582\25582.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25583\25583.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25584\25584.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25585\25585.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25586\25586.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25587\25587.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25588\25588.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25589\25589.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25590\25590.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25591\25591.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25592\25592.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25593\25593.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25595\25595.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\25\25.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\26\26.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\27\27.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\30703\30703.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\30704\30704.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\30705\30705.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\30706\30706.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\30707\30707.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\30708\30708.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\30709\30709.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\30710\30710.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\30\30.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31690\31690.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31691\31691.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31692\31692.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31693\31693.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31694\31694.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31695\31695.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31696\31696.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31697\31697.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31699\31699.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31700\31700.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31701\31701.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31702\31702.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31703\31703.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31704\31704.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31705\31705.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31706\31706.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31707\31707.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31708\31708.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31709\31709.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31710\31710.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31712\31712.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31713\31713.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31714\31714.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31715\31715.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31718\31718.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31719\31719.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31720\31720.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31721\31721.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31722\31722.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31723\31723.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31725\31725.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31726\31726.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3176\3176.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3177\3177.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3178\3178.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3179\3179.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3180\3180.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3181\3181.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3182\3182.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3183\3183.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3184\3184.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3185\3185.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3186\3186.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3187\3187.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3188\3188.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3189\3189.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3190\3190.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3191\3191.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3193\3193.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3194\3194.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3196\3196.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3197\3197.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3198\3198.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\31\31.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3200\3200.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3201\3201.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3203\3203.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3204\3204.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3205\3205.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3206\3206.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3207\3207.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3208\3208.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3209\3209.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3210\3210.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3212\3212.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3213\3213.png" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3215\3215.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3216\3216.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3217\3217.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3218\3218.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3219\3219.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3220\3220.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3221\3221.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3222\3222.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3223\3223.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3224\3224.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3225\3225.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3226\3226.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3228\3228.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3230\3230.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3231\3231.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3232\3232.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3233\3233.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3235\3235.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3236\3236.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3237\3237.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3238\3238.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3239\3239.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3240\3240.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3241\3241.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3242\3242.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3243\3243.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3244\3244.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3245\3245.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3246\3246.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3247\3247.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3248\3248.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3249\3249.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3250\3250.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3251\3251.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3252\3252.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3253\3253.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3254\3254.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3255\3255.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3257\3257.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3258\3258.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\3259\3259.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\32692\32692.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\32693\32693.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\32695\32695.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\32696\32696.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\33690\33690.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\33693\33693.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\33694\33694.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\33695\33695.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\33696\33696.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\33697\33697.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\33698\33698.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\33700\33700.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34695\34695.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34698\34698.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34699\34699.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34700\34700.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34701\34701.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34702\34702.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34704\34704.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34705\34705.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34706\34706.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34707\34707.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34708\34708.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34709\34709.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34710\34710.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34711\34711.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34712\34712.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34713\34713.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34714\34714.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34715\34715.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34716\34716.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34717\34717.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34718\34718.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34719\34719.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34720\34720.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34721\34721.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34722\34722.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34724\34724.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34725\34725.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34726\34726.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\34\34.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\35715\35715.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\35716\35716.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\35\35.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\36714\36714.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\36715\36715.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\36716\36716.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\36717\36717.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\36718\36718.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\36719\36719.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\36720\36720.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\36721\36721.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\36722\36722.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\36723\36723.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\36724\36724.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\36725\36725.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\36726\36726.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\36727\36727.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\36728\36728.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\36730\36730.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\36\36.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37731\37731.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37733\37733.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37734\37734.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37736\37736.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37737\37777.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37738\37738.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37739\37739.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37740\37740.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37742\37742.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37743\37743.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37744\37744.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37745\37745.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37747\37747.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37748\37748.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37749\37749.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37750\37750.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37751\37751.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37752\37752.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37753\37753.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37754\37754.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37755\37755.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37756\37756.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37758\37758.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37759\37759.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37760\37760.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37761\37761.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37762\37762.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37763\37763.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37764\37764.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37765\37765.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37766\37766.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37767\37767.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37768\37768.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37769\37769.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37770\37770.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37771\37771.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37773\37773.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37774\37774.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37775\37775.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37776\37776.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37779\37779.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\37\37.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\38\38.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\39\39.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\40\40.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\41\41.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\42\42.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\45\45.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\46\46.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48917\48917.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48918\48918.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48919\48919.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48921\48921.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48922\48922.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48923\48923.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48924\48924.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48925\48925.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48926\48926.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48927\48927.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48928\48928.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48929\48929.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48930\48930.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48932\48932.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48934\48934.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48935\48935.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48936\48936.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48939\48939.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48940\48940.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48941\48941.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48942\48942.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48943\48943.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48944\48944.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48945\48945.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48947\48947.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\48948\48948.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49942\49942.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49943\49943.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49944\49944.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49945\49945.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49946\49946.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49947\49947.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49948\49948.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49949\49949.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49950\49950.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49951\49951.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49952\49952.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49953\49953.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49955\49955.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49956\49956.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49957\49957.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49958\49958.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49959\49959.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49960\49960.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49961\49961.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49962\49962.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\49963\49963.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7262\7262.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7264\7264.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7265\7265.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7266\7266.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7267\7267.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7268\7268.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7269\7269.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7271\7271.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7272\7272.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7273\7273.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7275\7275.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7276\7276.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7277\7277.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7279\7279.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7280\7280.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7281\7281.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7282\7282.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7283\7283.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7284\7284.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7285\7285.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7286\7286.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7288\7288.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7289\7289.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7290\7290.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7291\7291.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7292\7292.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7293\7293.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7294\7294.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7295\7295.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7296\7296.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7297\7297.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7298\7298.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7299\7299.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7300\7300.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7301\7301.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7302\7302.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7303\7303.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7305\7305.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7306\7306.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7307\7307.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7308\7308.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7309\7309.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7310\7310.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\7311\7311.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8227\8227.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8229\8229.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8230\8230.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8232\8232.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8233\8233.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8234\8234.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8235\8235.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8236\8236.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8237\8237.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8238\8238.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8241\8241.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8242\8242.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8243\8243.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8244\8244.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8245\8245.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8246\8246.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8247\8247.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8248\8248.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8249\8249.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8250\8250.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8251\8251.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8252\8252.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8253\8253.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8254\8254.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8255\8255.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8256\8256.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8257\8257.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8258\8258.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8259\8259.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8260\8260.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8261\8261.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8262\8262.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8263\8263.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8264\8264.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8265\8265.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8266\8266.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8267\8267.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8268\8268.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8269\8269.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8271\8271.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8272\8272.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8273\8273.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8274\8274.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8275\8275.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8276\8276.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8277\8277.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8278\8278.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\8279\8279.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9227\9227.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9228\9228.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9229\9229.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9230\9230.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9231\9231.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9232\9232.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9233\9233.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9234\9234.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9235\9235.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9238\9238.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9239\9239.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9240\9240.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9241\9241.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9242\9242.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9243\9243.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9245\9245.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9246\9246.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9247\9247.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9249\9249.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9250\9250.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9251\9251.jpg" />
+    <Content Include="bin\Debug\Raporlar\MusterilerEskiDB\9252\9252.jpg" />
+    <Content Include="bin\Debug\SalajansBoyaMusteri.exe" />
+    <Content Include="bin\Debug\SalajansBoyaMusteri.pdb" />
+    <Content Include="bin\Debug\SalajansBoyaMusteri.vshost.exe" />
+    <Content Include="bin\Debug\webcam_capture.dll" />
+    <None Include="Resources\aracsec.png" />
+    <None Include="Resources\nowebcama1.gif" />
+    <Content Include="Resources\10.gif" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\101.gif" />
+    <None Include="Resources\bi.png" />
+    <None Include="Resources\18072017-140849.jpg" />
+    <None Include="Resources\593.png" />
+    <None Include="Resources\5931.png" />
+    <None Include="Resources\337.png" />
+    <None Include="Resources\3371.png" />
+    <None Include="Resources\3372.png" />
+    <Content Include="Resources\al.png" />
+    <None Include="Resources\al1.png" />
+    <None Include="Resources\anaekran.png" />
+    <None Include="Resources\ara.png" />
+    <None Include="Resources\aracsorgu.jpg" />
+    <None Include="Resources\aracs.Jpeg" />
+    <None Include="Resources\aracsorgu1.jpg" />
+    <None Include="Resources\aracsec3.png" />
+    <None Include="Resources\application-x-sqlite2.png" />
+    <Content Include="Resources\ayarlar.png" />
+    <Content Include="Resources\ayarlar2.png" />
+    <None Include="Resources\aygitlar.png" />
+    <Content Include="Resources\b-st.png" />
+    <None Include="Resources\b-st1.png" />
+    <Content Include="Resources\b.png" />
+    <None Include="Resources\b1.png" />
+    <None Include="Resources\baslik.png" />
+    <None Include="Resources\barkod.png" />
+    <None Include="Resources\B8855139697A.jpg" />
+    <Content Include="Resources\bi-st.png" />
+    <None Include="Resources\bi1.png" />
+    <None Include="Resources\bi-st1.png" />
+    <None Include="Resources\compytest2.png" />
+    <None Include="Resources\chassis.jpg" />
+    <None Include="Resources\car33.gif" />
+    <None Include="Resources\CARLOGO.png" />
+    <None Include="Resources\cargid.gif" />
+    <None Include="Resources\car-search-2.png" />
+    <None Include="Resources\cduzvitessanziman.png" />
+    <None Include="Resources\celektrik.png" />
+    <None Include="Resources\cfren.png" />
+    <None Include="Resources\cglassvan.png" />
+    <None Include="Resources\cglassvan3kapi.png" />
+    <None Include="Resources\chb4kapi.png" />
+    <None Include="Resources\chbtekkapi.png" />
+    <None Include="Resources\cicmekandonanim.png" />
+    <None Include="Resources\cminivancamli.png" />
+    <None Include="Resources\cminivancamsiz.png" />
+    <None Include="Resources\cbenzinlpgmotor.png" />
+    <None Include="Resources\ccabrio.png" />
+    <None Include="Resources\ccabrio4kapi.png" />
+    <None Include="Resources\cdisaydinlatma.png" />
+    <None Include="Resources\cdizelmotor.png" />
+    <None Include="Resources\caracgorselleri.png" />
+    <None Include="Resources\car22.gif" />
+    <None Include="Resources\cbenzinlpgmotorTablosuz.png" />
+    <None Include="Resources\cdizelmotorTablosuz.png" />
+    <Content Include="Resources\cmpytestlogo.png" />
+    <Content Include="Resources\cmpytestlogo1.png" />
+    <None Include="Resources\conduzen.png" />
+    <None Include="Resources\cpanelvan3kapicamli.png" />
+    <None Include="Resources\cpanelvan3kapicamsiz.png" />
+    <None Include="Resources\cpickup3kabin.png" />
+    <None Include="Resources\cpickup4kabin.png" />
+    <None Include="Resources\csasi.png" />
+    <None Include="Resources\csedan.png" />
+    <None Include="Resources\csuspansiyon.png" />
+    <None Include="Resources\csuv.png" />
+    <None Include="Resources\csuvtekkapi.png" />
+    <None Include="Resources\csw.png" />
+    <None Include="Resources\cswtek.png" />
+    <None Include="Resources\ctamotosanziman.png" />
+    <None Include="Resources\ctriptoniksanziman.png" />
+    <None Include="Resources\craporanaekran.png" />
+    <None Include="Resources\cyapilantestler.png" />
+    <None Include="Resources\cyapilantestler2.png" />
+    <None Include="Resources\compytest.png" />
+    <Content Include="Resources\d-st.png" />
+    <None Include="Resources\d-st1.png" />
+    <Content Include="Resources\d.png" />
+    <None Include="Resources\d1.png" />
+    <None Include="Resources\ep.png" />
+    <None Include="Resources\df.png" />
+    <None Include="Resources\excel.png" />
+    <None Include="Resources\frensistemi.png" />
+    <None Include="Resources\duzvites.png" />
+    <None Include="Resources\duzvitestext.png" />
+    <None Include="Resources\distransparent.png" />
+    <None Include="Resources\elektrikgorunum.png" />
+    <None Include="Resources\elektriktransparent.png" />
+    <Content Include="Resources\gc.png" />
+    <None Include="Resources\gc1.png" />
+    <None Include="Resources\guncelleme.png" />
+    <None Include="Resources\Gnome-Document-Save-64.png" />
+    <Content Include="Resources\h.png" />
+    <None Include="Resources\h1.png" />
+    <None Include="Resources\i.png" />
+    <None Include="Resources\icmekantransparent.png" />
+    <None Include="Resources\homebgcar.png" />
+    <None Include="Resources\intro.png" />
+    <None Include="Resources\introsalauto.png" />
+    <None Include="Resources\introebebeb.png" />
+    <None Include="Resources\homeScreen.png" />
+    <None Include="Resources\homeScreen1.png" />
+    <Content Include="Resources\lb-st.png" />
+    <None Include="Resources\lb-st1.png" />
+    <Content Include="Resources\lb.png" />
+    <None Include="Resources\lb1.png" />
+    <None Include="Resources\ok1.png" />
+    <None Include="Resources\loginuser1.png" />
+    <None Include="Resources\logo.png" />
+    <Content Include="Resources\menuok.png" />
+    <None Include="Resources\menuok1.png" />
+    <None Include="Resources\nophoto.png" />
+    <None Include="Resources\nocamera.png" />
+    <None Include="Resources\nocamera2.png" />
+    <Content Include="Resources\nowebcama.gif" />
+    <None Include="Resources\onduzensol.png" />
+    <None Include="Resources\onduzensol2.png" />
+    <Content Include="Resources\p-st.png" />
+    <None Include="Resources\p-st1.png" />
+    <Content Include="Resources\p.png" />
+    <None Include="Resources\p1.png" />
+    <None Include="Resources\print.png" />
+    <None Include="Resources\print20.png" />
+    <None Include="Resources\print24.png" />
+    <None Include="Resources\salajanslogo.png" />
+    <None Include="Resources\salajanslogomuz.png" />
+    <None Include="Resources\paketler.png" />
+    <None Include="Resources\play.png" />
+    <None Include="Resources\pause.png" />
+    <None Include="Resources\sgereksinimleri.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\plus2.gif" />
+    <Content Include="Resources\st.png" />
+    <None Include="Resources\st1.png" />
+    <None Include="Resources\tekotologo.png" />
+    <None Include="Resources\transparent.png" />
+    <None Include="Resources\userrefresh.png" />
+    <None Include="Resources\suspansiyonsistem.png" />
+    <None Include="Resources\tamotomatiktext.png" />
+    <None Include="Resources\tamotomatiksanzumanTEXT.png" />
+    <None Include="Resources\triptoniktext.png" />
+    <None Include="Resources\tamototext.png" />
+    <None Include="Resources\transparentbg.png" />
+    <None Include="Resources\TestSayfasi.png" />
+    <Content Include="Resources\v-st.png" />
+    <None Include="Resources\v-st1.png" />
+    <Content Include="Resources\vb.png" />
+    <None Include="Resources\vb1.png" />
+    <Content Include="Resources\yb-st.png" />
+    <None Include="Resources\yb-st1.png" />
+    <Content Include="Resources\yb.png" />
+    <None Include="Resources\yb1.png" />
+    <None Include="Resources\yenile.png" />
+    <None Include="Resources\yenile24.png" />
+    <None Include="Resources\yenile2.png" />
+    <Content Include="webcam_capture.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

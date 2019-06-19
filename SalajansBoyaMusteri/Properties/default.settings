@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SalajansBoyaMusteri.Properties" GeneratedClassName="default">
+  <Profiles />
+  <Settings>
+    <Setting Name="VarsayilanYazici" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Canon MF6100 Series UFRII LT</Value>
+    </Setting>
+    <Setting Name="BarkodYazici" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Microsoft Print to PDF</Value>
+    </Setting>
+    <Setting Name="KameraAygiti" Type="System.String" Scope="User">
+      <Value Profile="(Default)">USB 2.0 PC CAMERA,0</Value>
+    </Setting>
+    <Setting Name="Versiyon" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.0</Value>
+    </Setting>
+    <Setting Name="YaziciIlkSayfa" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="OtomatikGirisSayfasi" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="OtomatikBarkodEtiketi" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="OtomatikPaket" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Hepsi</Value>
+    </Setting>
+    <Setting Name="KameraCozunurluk" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="OtomatikYapilanTestler" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

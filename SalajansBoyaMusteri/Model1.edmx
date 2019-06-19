@@ -1,0 +1,1411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OTOTEKDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Calisanlar">
+          <Key>
+            <PropertyRef Name="CalisanID" />
+          </Key>
+          <Property Name="CalisanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="calisanad" Type="nvarchar" MaxLength="50" />
+          <Property Name="calisansoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="calisantel" Type="nvarchar" MaxLength="15" />
+          <Property Name="calisanmaas" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Kullanicilar">
+          <Key>
+            <PropertyRef Name="KullaniciID" />
+          </Key>
+          <Property Name="KullaniciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="KullaniciSifresi" Type="nvarchar" MaxLength="50" />
+          <Property Name="KullaniciYetkisi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OTOTEKDB.dbo.lisans' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="lisans">
+          <Key>
+            <PropertyRef Name="LisansID" />
+          </Key>
+          <Property Name="LisansID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LisansSahibi" Type="nvarchar" MaxLength="50" />
+          <Property Name="LisansFirmasi" Type="nvarchar" MaxLength="50" />
+          <Property Name="LisansKey" Type="nvarchar" MaxLength="70" />
+          <Property Name="LisansTarihi" Type="datetime" />
+          <Property Name="KayitTarihi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="musteri">
+          <Key>
+            <PropertyRef Name="MusteriID" />
+          </Key>
+          <Property Name="MusteriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="musteriadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="musterisoyadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="musteritelefon" Type="nvarchar" MaxLength="15" />
+          <Property Name="aracadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="aracmarkasi" Type="nvarchar" MaxLength="50" />
+          <Property Name="aracmodeli" Type="nvarchar" MaxLength="5" />
+          <Property Name="aracplakasi" Type="nvarchar" MaxLength="15" />
+          <Property Name="arackmsi" Type="nvarchar" MaxLength="10" />
+          <Property Name="aracrenk" Type="nvarchar" MaxLength="20" />
+          <Property Name="aractestturu" Type="nvarchar" MaxLength="25" />
+          <Property Name="aractestsonucu" Type="nvarchar(max)" />
+          <Property Name="aracyedekparcaucreti" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="aracservisucreti" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="aracdigerucretnedeni" Type="nvarchar(max)" />
+          <Property Name="aracdigerucretler" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="tarih" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Paketler">
+          <Key>
+            <PropertyRef Name="PaketID" />
+          </Key>
+          <Property Name="PaketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PaketAdi" Type="nvarchar" MaxLength="150" />
+          <Property Name="PaketIcerik" Type="nvarchar" MaxLength="450" />
+          <Property Name="PaketiOlusturan" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaketOlusturmaTarihi" Type="datetime" />
+          <Property Name="PaketAktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="Randevular">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MusteriAdsoyad" Type="nvarchar" MaxLength="150" />
+          <Property Name="MusteriTelefonu" Type="nvarchar" MaxLength="50" />
+          <Property Name="RandevuTarihi" Type="nvarchar" MaxLength="150" />
+          <Property Name="Mesaj" Type="nvarchar" MaxLength="400" />
+          <Property Name="islemTarihi" Type="datetime" />
+          <Property Name="RandevuKodu" Type="nvarchar" MaxLength="6" />
+          <Property Name="Şube" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Raporlar">
+          <Key>
+            <PropertyRef Name="RaporID" />
+          </Key>
+          <Property Name="RaporID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RMusteriID" Type="int" />
+          <Property Name="RaporAdresi" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TBL_ARACBOYASONUC">
+          <Key>
+            <PropertyRef Name="BoyaRaporID" />
+          </Key>
+          <Property Name="BoyaRaporID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SolOnCamurluk" Type="nvarchar" MaxLength="15" />
+          <Property Name="SolOnKapi" Type="nvarchar" MaxLength="15" />
+          <Property Name="SolArkaKapi" Type="nvarchar" MaxLength="15" />
+          <Property Name="SolArkaCamurluk" Type="nvarchar" MaxLength="15" />
+          <Property Name="SagOnCamurluk" Type="nvarchar" MaxLength="15" />
+          <Property Name="SagOnKapi" Type="nvarchar" MaxLength="15" />
+          <Property Name="SagArkaKapi" Type="nvarchar" MaxLength="15" />
+          <Property Name="SagArkaCamurluk" Type="nvarchar" MaxLength="15" />
+          <Property Name="Bagaj" Type="nvarchar" MaxLength="15" />
+          <Property Name="Kaput" Type="nvarchar" MaxLength="15" />
+          <Property Name="Tavan" Type="nvarchar" MaxLength="15" />
+          <Property Name="TestSonucu" Type="nvarchar" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="TBL_BOYADEGERLERI">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" MaxLength="50" />
+          <Property Name="Deger" Type="nvarchar" MaxLength="50" />
+          <Property Name="SiraNo" Type="int" />
+        </EntityType>
+        <EntityType Name="TBL_BOYAKONUMLARI">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AracTipi" Type="nvarchar" MaxLength="50" />
+          <Property Name="KonumAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="KonumX" Type="nvarchar" MaxLength="50" />
+          <Property Name="KonumY" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TBL_Firma_FK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="FirmaID" Type="int" Nullable="false" />
+          <Property Name="LisansID" Type="int" />
+          <Property Name="KullaniciID" Type="int" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_Firmalar">
+          <Key>
+            <PropertyRef Name="FirmaID" />
+          </Key>
+          <Property Name="FirmaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirmaNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="FirmaAdi" Type="nvarchar" MaxLength="100" />
+          <Property Name="FirmaAdres" Type="nvarchar" MaxLength="250" />
+          <Property Name="FirmaTelefon" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirmaLogo" Type="nvarchar" MaxLength="150" />
+          <Property Name="KayitTarihi" Type="datetime" />
+          <Property Name="FirmaIPAdress" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirmaVersion" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_FirmaPCKeys">
+          <Key>
+            <PropertyRef Name="LisansID" />
+          </Key>
+          <Property Name="LisansID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CPUID" Type="nvarchar" MaxLength="150" />
+          <Property Name="HDDSerial" Type="nvarchar" MaxLength="150" />
+          <Property Name="AnakartSerial" Type="nvarchar" MaxLength="150" />
+          <Property Name="MacAdress" Type="nvarchar" MaxLength="150" />
+          <Property Name="RegeditKey" Type="nvarchar" MaxLength="150" />
+          <Property Name="LisansNo" Type="nvarchar" MaxLength="150" />
+          <Property Name="LisansSifresi" Type="nvarchar" MaxLength="150" />
+          <Property Name="LisansHakki" Type="int" />
+        </EntityType>
+        <EntityType Name="TBL_FK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AracID" Type="int" />
+          <Property Name="MusteriID" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_iletisim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="adsoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="telefon" Type="nvarchar" MaxLength="50" />
+          <Property Name="konu" Type="nvarchar" MaxLength="100" />
+          <Property Name="mesaj" Type="nvarchar" MaxLength="500" />
+          <Property Name="TakipKodu" Type="nvarchar" MaxLength="6" />
+          <Property Name="islemTarihi" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TBL_Kullanicilar">
+          <Key>
+            <PropertyRef Name="KullaniciID" />
+          </Key>
+          <Property Name="KullaniciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Parola" Type="nvarchar" MaxLength="50" />
+          <Property Name="KullaniciAdSoyad" Type="nvarchar" MaxLength="100" />
+          <Property Name="KayitTarihi" Type="datetime" />
+          <Property Name="Yetki" Type="bit" />
+        </EntityType>
+        <EntityType Name="TBL_MUSTERIARACLARI">
+          <Key>
+            <PropertyRef Name="AracID" />
+          </Key>
+          <Property Name="AracID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MarkaID" Type="int" />
+          <Property Name="BoyaDegisenID" Type="int" />
+          <Property Name="MarkaveTip" Type="nvarchar" MaxLength="70" />
+          <Property Name="AltTipi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Plaka" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModelYili" Type="nvarchar" MaxLength="4" />
+          <Property Name="Renk" Type="nvarchar" MaxLength="15" />
+          <Property Name="Km" Type="nvarchar" MaxLength="50" />
+          <Property Name="SasiNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="MotorNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="KaskoVarmi" Type="nvarchar" MaxLength="50" />
+          <Property Name="SigortaTeklfi" Type="nvarchar" MaxLength="50" />
+          <Property Name="YakitTipi" Type="nvarchar" MaxLength="50" />
+          <Property Name="VitesTipi" Type="nvarchar" MaxLength="50" />
+          <Property Name="MuayeneTarihi" Type="nvarchar" MaxLength="50" />
+          <Property Name="EgsızMuayeneTarihi" Type="nvarchar" MaxLength="50" />
+          <Property Name="KullanimTuru" Type="nvarchar" MaxLength="50" />
+          <Property Name="KullanimKasaTipi" Type="nvarchar" MaxLength="50" />
+          <Property Name="KullanimAltTipi" Type="nvarchar" MaxLength="50" />
+          <Property Name="BoyaRaporPath" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TBL_MUSTERILER">
+          <Key>
+            <PropertyRef Name="MusteriID" />
+          </Key>
+          <Property Name="MusteriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BarkodNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="AliciAdsoyad" Type="nvarchar" MaxLength="70" />
+          <Property Name="AliciEmail" Type="nvarchar" MaxLength="70" />
+          <Property Name="AliciTelefon" Type="nvarchar" MaxLength="50" />
+          <Property Name="SaticiAdsoyad" Type="nvarchar" MaxLength="70" />
+          <Property Name="SaticiıEmail" Type="nvarchar" MaxLength="70" />
+          <Property Name="SaticiTelefon" Type="nvarchar" MaxLength="50" />
+          <Property Name="AliciTcNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="SaticiTcNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaketAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaketIcerik" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TBL_ODEMELER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AracID" Type="int" />
+          <Property Name="MusteriID" Type="int" />
+          <Property Name="OdemeSekli" Type="nvarchar" MaxLength="11" />
+          <Property Name="OdemeDurumu" Type="bit" />
+          <Property Name="OdemeTutari" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OdemeTarihi" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TBL_YEDEKLER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Path" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TBLARACSERISI">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MarkaID" Type="int" />
+          <Property Name="ModelID" Type="int" />
+          <Property Name="SeriAdi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TBLARACVERSIYON">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SeriID" Type="int" />
+          <Property Name="VersiyonAdi" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TBLMARKA">
+          <Key>
+            <PropertyRef Name="MARKAID" />
+          </Key>
+          <Property Name="MARKAID" Type="int" Nullable="false" />
+          <Property Name="MARKANAME" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TBLMODEL">
+          <Key>
+            <PropertyRef Name="MODELID" />
+          </Key>
+          <Property Name="MODELID" Type="int" Nullable="false" />
+          <Property Name="MARKAID" Type="int" />
+          <Property Name="MODELNAME" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Urunler">
+          <Key>
+            <PropertyRef Name="UrunID" />
+          </Key>
+          <Property Name="UrunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UrunAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="UrunAdeti" Type="nvarchar" MaxLength="5" />
+          <Property Name="UrunTuru" Type="nvarchar" MaxLength="50" />
+          <Property Name="UrunFiyati" Type="nvarchar" MaxLength="50" />
+          <Property Name="UrunAlanKisi" Type="nvarchar" MaxLength="50" />
+          <Property Name="UrunAlmaNedeni" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="WebBoyaRapor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MusteriID" Type="int" />
+          <Property Name="SolOnCamurluk" Type="nvarchar" MaxLength="50" />
+          <Property Name="SagOnCamurluk" Type="nvarchar" MaxLength="50" />
+          <Property Name="SolOnKapi" Type="nvarchar" MaxLength="50" />
+          <Property Name="SagOnKapi" Type="nvarchar" MaxLength="50" />
+          <Property Name="SolArkaKapi" Type="nvarchar" MaxLength="50" />
+          <Property Name="SagArkaKapi" Type="nvarchar" MaxLength="50" />
+          <Property Name="SolArkaCamurluk" Type="nvarchar" MaxLength="50" />
+          <Property Name="SagArkaCamurluk" Type="nvarchar" MaxLength="50" />
+          <Property Name="Kaput" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tavan" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bagaj" Type="nvarchar" MaxLength="50" />
+          <Property Name="MusteriAdiSoyadi" Type="nvarchar" MaxLength="150" />
+          <Property Name="MusteriPlaka" Type="nvarchar" MaxLength="50" />
+          <Property Name="MusteriAracMarkaModel" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="yedekparcalistesi">
+          <Key>
+            <PropertyRef Name="YedekParcaID" />
+          </Key>
+          <Property Name="YedekParcaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YedekSubID" Type="int" />
+          <Property Name="yedekparcaadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="yedekparcaadeti" Type="int" />
+          <Property Name="yedekparcafirmasi" Type="nvarchar" MaxLength="50" />
+          <Property Name="yedekparcaucret" Type="int" />
+          <Property Name="tornafirmasi" Type="nvarchar" MaxLength="50" />
+          <Property Name="tornaucreti" Type="int" />
+          <Property Name="iscilikucreti" Type="int" />
+          <Property Name="yparcaraporu" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_TBL_Firma_FK_TBL_Firmalar">
+          <End Role="TBL_Firmalar" Type="Self.TBL_Firmalar" Multiplicity="1" />
+          <End Role="TBL_Firma_FK" Type="Self.TBL_Firma_FK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_Firmalar">
+              <PropertyRef Name="FirmaID" />
+            </Principal>
+            <Dependent Role="TBL_Firma_FK">
+              <PropertyRef Name="FirmaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_Firma_FK_TBL_FirmaPCKeys">
+          <End Role="TBL_FirmaPCKeys" Type="Self.TBL_FirmaPCKeys" Multiplicity="0..1" />
+          <End Role="TBL_Firma_FK" Type="Self.TBL_Firma_FK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_FirmaPCKeys">
+              <PropertyRef Name="LisansID" />
+            </Principal>
+            <Dependent Role="TBL_Firma_FK">
+              <PropertyRef Name="LisansID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_Firma_FK_TBL_Kullanicilar">
+          <End Role="TBL_Kullanicilar" Type="Self.TBL_Kullanicilar" Multiplicity="0..1" />
+          <End Role="TBL_Firma_FK" Type="Self.TBL_Firma_FK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_Kullanicilar">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="TBL_Firma_FK">
+              <PropertyRef Name="KullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_FK_TBL_MUSTERIARACLARI">
+          <End Role="TBL_MUSTERIARACLARI" Type="Self.TBL_MUSTERIARACLARI" Multiplicity="0..1" />
+          <End Role="TBL_FK" Type="Self.TBL_FK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_MUSTERIARACLARI">
+              <PropertyRef Name="AracID" />
+            </Principal>
+            <Dependent Role="TBL_FK">
+              <PropertyRef Name="AracID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_FK_TBL_MUSTERILER">
+          <End Role="TBL_MUSTERILER" Type="Self.TBL_MUSTERILER" Multiplicity="0..1" />
+          <End Role="TBL_FK" Type="Self.TBL_FK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_MUSTERILER">
+              <PropertyRef Name="MusteriID" />
+            </Principal>
+            <Dependent Role="TBL_FK">
+              <PropertyRef Name="MusteriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_MUSTERIARACLARI_TBL_ARACBOYASONUC1">
+          <End Role="TBL_ARACBOYASONUC" Type="Self.TBL_ARACBOYASONUC" Multiplicity="0..1" />
+          <End Role="TBL_MUSTERIARACLARI" Type="Self.TBL_MUSTERIARACLARI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_ARACBOYASONUC">
+              <PropertyRef Name="BoyaRaporID" />
+            </Principal>
+            <Dependent Role="TBL_MUSTERIARACLARI">
+              <PropertyRef Name="BoyaDegisenID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_ODEMELER_TBL_MUSTERIARACLARI">
+          <End Role="TBL_MUSTERIARACLARI" Type="Self.TBL_MUSTERIARACLARI" Multiplicity="0..1" />
+          <End Role="TBL_ODEMELER" Type="Self.TBL_ODEMELER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_MUSTERIARACLARI">
+              <PropertyRef Name="AracID" />
+            </Principal>
+            <Dependent Role="TBL_ODEMELER">
+              <PropertyRef Name="AracID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_ODEMELER_TBL_MUSTERILER">
+          <End Role="TBL_MUSTERILER" Type="Self.TBL_MUSTERILER" Multiplicity="0..1" />
+          <End Role="TBL_ODEMELER" Type="Self.TBL_ODEMELER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_MUSTERILER">
+              <PropertyRef Name="MusteriID" />
+            </Principal>
+            <Dependent Role="TBL_ODEMELER">
+              <PropertyRef Name="MusteriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OTOTEKDBModelStoreContainer">
+          <EntitySet Name="Calisanlar" EntityType="Self.Calisanlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="musteri" EntityType="Self.musteri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Paketler" EntityType="Self.Paketler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Randevular" EntityType="Self.Randevular" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Raporlar" EntityType="Self.Raporlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_ARACBOYASONUC" EntityType="Self.TBL_ARACBOYASONUC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_BOYADEGERLERI" EntityType="Self.TBL_BOYADEGERLERI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_BOYAKONUMLARI" EntityType="Self.TBL_BOYAKONUMLARI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_Firma_FK" EntityType="Self.TBL_Firma_FK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_Firmalar" EntityType="Self.TBL_Firmalar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_FirmaPCKeys" EntityType="Self.TBL_FirmaPCKeys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_FK" EntityType="Self.TBL_FK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_iletisim" EntityType="Self.tbl_iletisim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_Kullanicilar" EntityType="Self.TBL_Kullanicilar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_MUSTERIARACLARI" EntityType="Self.TBL_MUSTERIARACLARI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_MUSTERILER" EntityType="Self.TBL_MUSTERILER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_ODEMELER" EntityType="Self.TBL_ODEMELER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_YEDEKLER" EntityType="Self.TBL_YEDEKLER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLARACSERISI" EntityType="Self.TBLARACSERISI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLARACVERSIYON" EntityType="Self.TBLARACVERSIYON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLMARKA" EntityType="Self.TBLMARKA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLMODEL" EntityType="Self.TBLMODEL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Urunler" EntityType="Self.Urunler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WebBoyaRapor" EntityType="Self.WebBoyaRapor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="yedekparcalistesi" EntityType="Self.yedekparcalistesi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lisans" EntityType="Self.lisans" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [lisans].[LisansID] AS [LisansID], 
+    [lisans].[LisansSahibi] AS [LisansSahibi], 
+    [lisans].[LisansFirmasi] AS [LisansFirmasi], 
+    [lisans].[LisansKey] AS [LisansKey], 
+    [lisans].[LisansTarihi] AS [LisansTarihi], 
+    [lisans].[KayitTarihi] AS [KayitTarihi]
+    FROM [dbo].[lisans] AS [lisans]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_TBL_Firma_FK_TBL_Firmalar" Association="Self.FK_TBL_Firma_FK_TBL_Firmalar">
+            <End Role="TBL_Firmalar" EntitySet="TBL_Firmalar" />
+            <End Role="TBL_Firma_FK" EntitySet="TBL_Firma_FK" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_Firma_FK_TBL_FirmaPCKeys" Association="Self.FK_TBL_Firma_FK_TBL_FirmaPCKeys">
+            <End Role="TBL_FirmaPCKeys" EntitySet="TBL_FirmaPCKeys" />
+            <End Role="TBL_Firma_FK" EntitySet="TBL_Firma_FK" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_Firma_FK_TBL_Kullanicilar" Association="Self.FK_TBL_Firma_FK_TBL_Kullanicilar">
+            <End Role="TBL_Kullanicilar" EntitySet="TBL_Kullanicilar" />
+            <End Role="TBL_Firma_FK" EntitySet="TBL_Firma_FK" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_FK_TBL_MUSTERIARACLARI" Association="Self.FK_TBL_FK_TBL_MUSTERIARACLARI">
+            <End Role="TBL_MUSTERIARACLARI" EntitySet="TBL_MUSTERIARACLARI" />
+            <End Role="TBL_FK" EntitySet="TBL_FK" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_FK_TBL_MUSTERILER" Association="Self.FK_TBL_FK_TBL_MUSTERILER">
+            <End Role="TBL_MUSTERILER" EntitySet="TBL_MUSTERILER" />
+            <End Role="TBL_FK" EntitySet="TBL_FK" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_MUSTERIARACLARI_TBL_ARACBOYASONUC1" Association="Self.FK_TBL_MUSTERIARACLARI_TBL_ARACBOYASONUC1">
+            <End Role="TBL_ARACBOYASONUC" EntitySet="TBL_ARACBOYASONUC" />
+            <End Role="TBL_MUSTERIARACLARI" EntitySet="TBL_MUSTERIARACLARI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_ODEMELER_TBL_MUSTERIARACLARI" Association="Self.FK_TBL_ODEMELER_TBL_MUSTERIARACLARI">
+            <End Role="TBL_MUSTERIARACLARI" EntitySet="TBL_MUSTERIARACLARI" />
+            <End Role="TBL_ODEMELER" EntitySet="TBL_ODEMELER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_ODEMELER_TBL_MUSTERILER" Association="Self.FK_TBL_ODEMELER_TBL_MUSTERILER">
+            <End Role="TBL_MUSTERILER" EntitySet="TBL_MUSTERILER" />
+            <End Role="TBL_ODEMELER" EntitySet="TBL_ODEMELER" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OTOTEKDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Calisanlar" EntityType="OTOTEKDBModel.Calisanlar" />
+          <EntitySet Name="Kullanicilar" EntityType="OTOTEKDBModel.Kullanicilar" />
+          <EntitySet Name="musteri" EntityType="OTOTEKDBModel.musteri" />
+          <EntitySet Name="Paketler" EntityType="OTOTEKDBModel.Paketler" />
+          <EntitySet Name="Randevular" EntityType="OTOTEKDBModel.Randevular" />
+          <EntitySet Name="Raporlar" EntityType="OTOTEKDBModel.Raporlar" />
+          <EntitySet Name="TBL_ARACBOYASONUC" EntityType="OTOTEKDBModel.TBL_ARACBOYASONUC" />
+          <EntitySet Name="TBL_BOYADEGERLERI" EntityType="OTOTEKDBModel.TBL_BOYADEGERLERI" />
+          <EntitySet Name="TBL_BOYAKONUMLARI" EntityType="OTOTEKDBModel.TBL_BOYAKONUMLARI" />
+          <EntitySet Name="TBL_Firma_FK" EntityType="OTOTEKDBModel.TBL_Firma_FK" />
+          <EntitySet Name="TBL_Firmalar" EntityType="OTOTEKDBModel.TBL_Firmalar" />
+          <EntitySet Name="TBL_FirmaPCKeys" EntityType="OTOTEKDBModel.TBL_FirmaPCKeys" />
+          <EntitySet Name="TBL_FK" EntityType="OTOTEKDBModel.TBL_FK" />
+          <EntitySet Name="tbl_iletisim" EntityType="OTOTEKDBModel.tbl_iletisim" />
+          <EntitySet Name="TBL_Kullanicilar" EntityType="OTOTEKDBModel.TBL_Kullanicilar" />
+          <EntitySet Name="TBL_MUSTERIARACLARI" EntityType="OTOTEKDBModel.TBL_MUSTERIARACLARI" />
+          <EntitySet Name="TBL_MUSTERILER" EntityType="OTOTEKDBModel.TBL_MUSTERILER" />
+          <EntitySet Name="TBL_ODEMELER" EntityType="OTOTEKDBModel.TBL_ODEMELER" />
+          <EntitySet Name="TBLARACSERISI" EntityType="OTOTEKDBModel.TBLARACSERISI" />
+          <EntitySet Name="TBLARACVERSIYON" EntityType="OTOTEKDBModel.TBLARACVERSIYON" />
+          <EntitySet Name="TBLMARKA" EntityType="OTOTEKDBModel.TBLMARKA" />
+          <EntitySet Name="TBLMODEL" EntityType="OTOTEKDBModel.TBLMODEL" />
+          <EntitySet Name="Urunler" EntityType="OTOTEKDBModel.Urunler" />
+          <EntitySet Name="WebBoyaRapor" EntityType="OTOTEKDBModel.WebBoyaRapor" />
+          <EntitySet Name="yedekparcalistesi" EntityType="OTOTEKDBModel.yedekparcalistesi" />
+          <EntitySet Name="lisans" EntityType="OTOTEKDBModel.lisans" />
+          <AssociationSet Name="FK_TBL_MUSTERIARACLARI_TBL_ARACBOYASONUC1" Association="OTOTEKDBModel.FK_TBL_MUSTERIARACLARI_TBL_ARACBOYASONUC1">
+            <End Role="TBL_ARACBOYASONUC" EntitySet="TBL_ARACBOYASONUC" />
+            <End Role="TBL_MUSTERIARACLARI" EntitySet="TBL_MUSTERIARACLARI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_Firma_FK_TBL_Firmalar" Association="OTOTEKDBModel.FK_TBL_Firma_FK_TBL_Firmalar">
+            <End Role="TBL_Firmalar" EntitySet="TBL_Firmalar" />
+            <End Role="TBL_Firma_FK" EntitySet="TBL_Firma_FK" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_Firma_FK_TBL_FirmaPCKeys" Association="OTOTEKDBModel.FK_TBL_Firma_FK_TBL_FirmaPCKeys">
+            <End Role="TBL_FirmaPCKeys" EntitySet="TBL_FirmaPCKeys" />
+            <End Role="TBL_Firma_FK" EntitySet="TBL_Firma_FK" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_Firma_FK_TBL_Kullanicilar" Association="OTOTEKDBModel.FK_TBL_Firma_FK_TBL_Kullanicilar">
+            <End Role="TBL_Kullanicilar" EntitySet="TBL_Kullanicilar" />
+            <End Role="TBL_Firma_FK" EntitySet="TBL_Firma_FK" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_FK_TBL_MUSTERIARACLARI" Association="OTOTEKDBModel.FK_TBL_FK_TBL_MUSTERIARACLARI">
+            <End Role="TBL_MUSTERIARACLARI" EntitySet="TBL_MUSTERIARACLARI" />
+            <End Role="TBL_FK" EntitySet="TBL_FK" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_FK_TBL_MUSTERILER" Association="OTOTEKDBModel.FK_TBL_FK_TBL_MUSTERILER">
+            <End Role="TBL_MUSTERILER" EntitySet="TBL_MUSTERILER" />
+            <End Role="TBL_FK" EntitySet="TBL_FK" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_ODEMELER_TBL_MUSTERIARACLARI" Association="OTOTEKDBModel.FK_TBL_ODEMELER_TBL_MUSTERIARACLARI">
+            <End Role="TBL_MUSTERIARACLARI" EntitySet="TBL_MUSTERIARACLARI" />
+            <End Role="TBL_ODEMELER" EntitySet="TBL_ODEMELER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_ODEMELER_TBL_MUSTERILER" Association="OTOTEKDBModel.FK_TBL_ODEMELER_TBL_MUSTERILER">
+            <End Role="TBL_MUSTERILER" EntitySet="TBL_MUSTERILER" />
+            <End Role="TBL_ODEMELER" EntitySet="TBL_ODEMELER" />
+          </AssociationSet>
+          <EntitySet Name="TBL_YEDEKLER" EntityType="OTOTEKDBModel.TBL_YEDEKLER" />
+        </EntityContainer>
+        <EntityType Name="Calisanlar">
+          <Key>
+            <PropertyRef Name="CalisanID" />
+          </Key>
+          <Property Name="CalisanID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="calisanad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="calisansoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="calisantel" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="calisanmaas" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Kullanicilar">
+          <Key>
+            <PropertyRef Name="KullaniciID" />
+          </Key>
+          <Property Name="KullaniciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KullaniciSifresi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KullaniciYetkisi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="musteri">
+          <Key>
+            <PropertyRef Name="MusteriID" />
+          </Key>
+          <Property Name="MusteriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="musteriadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="musterisoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="musteritelefon" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="aracadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aracmarkasi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aracmodeli" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="aracplakasi" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="arackmsi" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="aracrenk" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="aractestturu" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="aractestsonucu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="aracyedekparcaucreti" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="aracservisucreti" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="aracdigerucretnedeni" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="aracdigerucretler" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Paketler">
+          <Key>
+            <PropertyRef Name="PaketID" />
+          </Key>
+          <Property Name="PaketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PaketAdi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PaketIcerik" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="PaketiOlusturan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaketOlusturmaTarihi" Type="DateTime" Precision="3" />
+          <Property Name="PaketAktifMi" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Randevular">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MusteriAdsoyad" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MusteriTelefonu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RandevuTarihi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Mesaj" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="islemTarihi" Type="DateTime" Precision="3" />
+          <Property Name="RandevuKodu" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Şube" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Raporlar">
+          <Key>
+            <PropertyRef Name="RaporID" />
+          </Key>
+          <Property Name="RaporID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RMusteriID" Type="Int32" />
+          <Property Name="RaporAdresi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBL_ARACBOYASONUC">
+          <Key>
+            <PropertyRef Name="BoyaRaporID" />
+          </Key>
+          <Property Name="BoyaRaporID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SolOnCamurluk" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SolOnKapi" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SolArkaKapi" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SolArkaCamurluk" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SagOnCamurluk" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SagOnKapi" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SagArkaKapi" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SagArkaCamurluk" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Bagaj" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Kaput" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Tavan" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="TestSonucu" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TBL_MUSTERIARACLARI" Relationship="OTOTEKDBModel.FK_TBL_MUSTERIARACLARI_TBL_ARACBOYASONUC1" FromRole="TBL_ARACBOYASONUC" ToRole="TBL_MUSTERIARACLARI" />
+        </EntityType>
+        <EntityType Name="TBL_BOYADEGERLERI">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Deger" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SiraNo" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TBL_BOYAKONUMLARI">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AracTipi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KonumAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KonumX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KonumY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBL_Firma_FK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="FirmaID" Type="Int32" Nullable="false" />
+          <Property Name="LisansID" Type="Int32" />
+          <Property Name="KullaniciID" Type="Int32" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="TBL_Firmalar" Relationship="OTOTEKDBModel.FK_TBL_Firma_FK_TBL_Firmalar" FromRole="TBL_Firma_FK" ToRole="TBL_Firmalar" />
+          <NavigationProperty Name="TBL_FirmaPCKeys" Relationship="OTOTEKDBModel.FK_TBL_Firma_FK_TBL_FirmaPCKeys" FromRole="TBL_Firma_FK" ToRole="TBL_FirmaPCKeys" />
+          <NavigationProperty Name="TBL_Kullanicilar" Relationship="OTOTEKDBModel.FK_TBL_Firma_FK_TBL_Kullanicilar" FromRole="TBL_Firma_FK" ToRole="TBL_Kullanicilar" />
+        </EntityType>
+        <EntityType Name="TBL_Firmalar">
+          <Key>
+            <PropertyRef Name="FirmaID" />
+          </Key>
+          <Property Name="FirmaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirmaNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FirmaAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FirmaAdres" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FirmaTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirmaLogo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="KayitTarihi" Type="DateTime" Precision="3" />
+          <Property Name="FirmaIPAdress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirmaVersion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TBL_Firma_FK" Relationship="OTOTEKDBModel.FK_TBL_Firma_FK_TBL_Firmalar" FromRole="TBL_Firmalar" ToRole="TBL_Firma_FK" />
+        </EntityType>
+        <EntityType Name="TBL_FirmaPCKeys">
+          <Key>
+            <PropertyRef Name="LisansID" />
+          </Key>
+          <Property Name="LisansID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CPUID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="HDDSerial" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="AnakartSerial" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MacAdress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="RegeditKey" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="LisansNo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="LisansSifresi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="LisansHakki" Type="Int32" />
+          <NavigationProperty Name="TBL_Firma_FK" Relationship="OTOTEKDBModel.FK_TBL_Firma_FK_TBL_FirmaPCKeys" FromRole="TBL_FirmaPCKeys" ToRole="TBL_Firma_FK" />
+        </EntityType>
+        <EntityType Name="TBL_FK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AracID" Type="Int32" />
+          <Property Name="MusteriID" Type="Int32" />
+          <NavigationProperty Name="TBL_MUSTERIARACLARI" Relationship="OTOTEKDBModel.FK_TBL_FK_TBL_MUSTERIARACLARI" FromRole="TBL_FK" ToRole="TBL_MUSTERIARACLARI" />
+          <NavigationProperty Name="TBL_MUSTERILER" Relationship="OTOTEKDBModel.FK_TBL_FK_TBL_MUSTERILER" FromRole="TBL_FK" ToRole="TBL_MUSTERILER" />
+        </EntityType>
+        <EntityType Name="tbl_iletisim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="adsoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="konu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="mesaj" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TakipKodu" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="islemTarihi" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TBL_Kullanicilar">
+          <Key>
+            <PropertyRef Name="KullaniciID" />
+          </Key>
+          <Property Name="KullaniciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Parola" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KullaniciAdSoyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KayitTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Yetki" Type="Boolean" />
+          <NavigationProperty Name="TBL_Firma_FK" Relationship="OTOTEKDBModel.FK_TBL_Firma_FK_TBL_Kullanicilar" FromRole="TBL_Kullanicilar" ToRole="TBL_Firma_FK" />
+        </EntityType>
+        <EntityType Name="TBL_MUSTERIARACLARI">
+          <Key>
+            <PropertyRef Name="AracID" />
+          </Key>
+          <Property Name="AracID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MarkaID" Type="Int32" />
+          <Property Name="BoyaDegisenID" Type="Int32" />
+          <Property Name="MarkaveTip" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="AltTipi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Plaka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModelYili" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Renk" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Km" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SasiNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MotorNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KaskoVarmi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SigortaTeklfi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YakitTipi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VitesTipi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MuayeneTarihi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EgsızMuayeneTarihi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KullanimTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KullanimKasaTipi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KullanimAltTipi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BoyaRaporPath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TBL_ARACBOYASONUC" Relationship="OTOTEKDBModel.FK_TBL_MUSTERIARACLARI_TBL_ARACBOYASONUC1" FromRole="TBL_MUSTERIARACLARI" ToRole="TBL_ARACBOYASONUC" />
+          <NavigationProperty Name="TBL_FK" Relationship="OTOTEKDBModel.FK_TBL_FK_TBL_MUSTERIARACLARI" FromRole="TBL_MUSTERIARACLARI" ToRole="TBL_FK" />
+          <NavigationProperty Name="TBL_ODEMELER" Relationship="OTOTEKDBModel.FK_TBL_ODEMELER_TBL_MUSTERIARACLARI" FromRole="TBL_MUSTERIARACLARI" ToRole="TBL_ODEMELER" />
+        </EntityType>
+        <EntityType Name="TBL_MUSTERILER">
+          <Key>
+            <PropertyRef Name="MusteriID" />
+          </Key>
+          <Property Name="MusteriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BarkodNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AliciAdsoyad" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="AliciEmail" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="AliciTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SaticiAdsoyad" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="SaticiıEmail" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="SaticiTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AliciTcNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SaticiTcNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaketAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaketIcerik" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TBL_FK" Relationship="OTOTEKDBModel.FK_TBL_FK_TBL_MUSTERILER" FromRole="TBL_MUSTERILER" ToRole="TBL_FK" />
+          <NavigationProperty Name="TBL_ODEMELER" Relationship="OTOTEKDBModel.FK_TBL_ODEMELER_TBL_MUSTERILER" FromRole="TBL_MUSTERILER" ToRole="TBL_ODEMELER" />
+        </EntityType>
+        <EntityType Name="TBL_ODEMELER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AracID" Type="Int32" />
+          <Property Name="MusteriID" Type="Int32" />
+          <Property Name="OdemeSekli" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="OdemeDurumu" Type="Boolean" />
+          <Property Name="OdemeTutari" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OdemeTarihi" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TBL_MUSTERIARACLARI" Relationship="OTOTEKDBModel.FK_TBL_ODEMELER_TBL_MUSTERIARACLARI" FromRole="TBL_ODEMELER" ToRole="TBL_MUSTERIARACLARI" />
+          <NavigationProperty Name="TBL_MUSTERILER" Relationship="OTOTEKDBModel.FK_TBL_ODEMELER_TBL_MUSTERILER" FromRole="TBL_ODEMELER" ToRole="TBL_MUSTERILER" />
+        </EntityType>
+        <EntityType Name="TBLARACSERISI">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MarkaID" Type="Int32" />
+          <Property Name="ModelID" Type="Int32" />
+          <Property Name="SeriAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBLARACVERSIYON">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SeriID" Type="Int32" />
+          <Property Name="VersiyonAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBLMARKA">
+          <Key>
+            <PropertyRef Name="MARKAID" />
+          </Key>
+          <Property Name="MARKAID" Type="Int32" Nullable="false" />
+          <Property Name="MARKANAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBLMODEL">
+          <Key>
+            <PropertyRef Name="MODELID" />
+          </Key>
+          <Property Name="MODELID" Type="Int32" Nullable="false" />
+          <Property Name="MARKAID" Type="Int32" />
+          <Property Name="MODELNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Urunler">
+          <Key>
+            <PropertyRef Name="UrunID" />
+          </Key>
+          <Property Name="UrunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UrunAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UrunAdeti" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="UrunTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UrunFiyati" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UrunAlanKisi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UrunAlmaNedeni" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WebBoyaRapor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MusteriID" Type="Int32" />
+          <Property Name="SolOnCamurluk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SagOnCamurluk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SolOnKapi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SagOnKapi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SolArkaKapi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SagArkaKapi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SolArkaCamurluk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SagArkaCamurluk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Kaput" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tavan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Bagaj" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MusteriAdiSoyadi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MusteriPlaka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MusteriAracMarkaModel" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="yedekparcalistesi">
+          <Key>
+            <PropertyRef Name="YedekParcaID" />
+          </Key>
+          <Property Name="YedekParcaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YedekSubID" Type="Int32" />
+          <Property Name="yedekparcaadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="yedekparcaadeti" Type="Int32" />
+          <Property Name="yedekparcafirmasi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="yedekparcaucret" Type="Int32" />
+          <Property Name="tornafirmasi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tornaucreti" Type="Int32" />
+          <Property Name="iscilikucreti" Type="Int32" />
+          <Property Name="yparcaraporu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="lisans">
+          <Key>
+            <PropertyRef Name="LisansID" />
+          </Key>
+          <Property Name="LisansID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LisansSahibi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LisansFirmasi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LisansKey" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="LisansTarihi" Type="DateTime" Precision="3" />
+          <Property Name="KayitTarihi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_TBL_MUSTERIARACLARI_TBL_ARACBOYASONUC1">
+          <End Type="OTOTEKDBModel.TBL_ARACBOYASONUC" Role="TBL_ARACBOYASONUC" Multiplicity="0..1" />
+          <End Type="OTOTEKDBModel.TBL_MUSTERIARACLARI" Role="TBL_MUSTERIARACLARI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_ARACBOYASONUC">
+              <PropertyRef Name="BoyaRaporID" />
+            </Principal>
+            <Dependent Role="TBL_MUSTERIARACLARI">
+              <PropertyRef Name="BoyaDegisenID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_Firma_FK_TBL_Firmalar">
+          <End Type="OTOTEKDBModel.TBL_Firmalar" Role="TBL_Firmalar" Multiplicity="1" />
+          <End Type="OTOTEKDBModel.TBL_Firma_FK" Role="TBL_Firma_FK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_Firmalar">
+              <PropertyRef Name="FirmaID" />
+            </Principal>
+            <Dependent Role="TBL_Firma_FK">
+              <PropertyRef Name="FirmaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_Firma_FK_TBL_FirmaPCKeys">
+          <End Type="OTOTEKDBModel.TBL_FirmaPCKeys" Role="TBL_FirmaPCKeys" Multiplicity="0..1" />
+          <End Type="OTOTEKDBModel.TBL_Firma_FK" Role="TBL_Firma_FK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_FirmaPCKeys">
+              <PropertyRef Name="LisansID" />
+            </Principal>
+            <Dependent Role="TBL_Firma_FK">
+              <PropertyRef Name="LisansID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_Firma_FK_TBL_Kullanicilar">
+          <End Type="OTOTEKDBModel.TBL_Kullanicilar" Role="TBL_Kullanicilar" Multiplicity="0..1" />
+          <End Type="OTOTEKDBModel.TBL_Firma_FK" Role="TBL_Firma_FK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_Kullanicilar">
+              <PropertyRef Name="KullaniciID" />
+            </Principal>
+            <Dependent Role="TBL_Firma_FK">
+              <PropertyRef Name="KullaniciID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_FK_TBL_MUSTERIARACLARI">
+          <End Type="OTOTEKDBModel.TBL_MUSTERIARACLARI" Role="TBL_MUSTERIARACLARI" Multiplicity="0..1" />
+          <End Type="OTOTEKDBModel.TBL_FK" Role="TBL_FK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_MUSTERIARACLARI">
+              <PropertyRef Name="AracID" />
+            </Principal>
+            <Dependent Role="TBL_FK">
+              <PropertyRef Name="AracID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_FK_TBL_MUSTERILER">
+          <End Type="OTOTEKDBModel.TBL_MUSTERILER" Role="TBL_MUSTERILER" Multiplicity="0..1" />
+          <End Type="OTOTEKDBModel.TBL_FK" Role="TBL_FK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_MUSTERILER">
+              <PropertyRef Name="MusteriID" />
+            </Principal>
+            <Dependent Role="TBL_FK">
+              <PropertyRef Name="MusteriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_ODEMELER_TBL_MUSTERIARACLARI">
+          <End Type="OTOTEKDBModel.TBL_MUSTERIARACLARI" Role="TBL_MUSTERIARACLARI" Multiplicity="0..1" />
+          <End Type="OTOTEKDBModel.TBL_ODEMELER" Role="TBL_ODEMELER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_MUSTERIARACLARI">
+              <PropertyRef Name="AracID" />
+            </Principal>
+            <Dependent Role="TBL_ODEMELER">
+              <PropertyRef Name="AracID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_ODEMELER_TBL_MUSTERILER">
+          <End Type="OTOTEKDBModel.TBL_MUSTERILER" Role="TBL_MUSTERILER" Multiplicity="0..1" />
+          <End Type="OTOTEKDBModel.TBL_ODEMELER" Role="TBL_ODEMELER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_MUSTERILER">
+              <PropertyRef Name="MusteriID" />
+            </Principal>
+            <Dependent Role="TBL_ODEMELER">
+              <PropertyRef Name="MusteriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TBL_YEDEKLER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OTOTEKDBModelStoreContainer" CdmEntityContainer="DBEntities">
+          <EntitySetMapping Name="Calisanlar">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.Calisanlar">
+              <MappingFragment StoreEntitySet="Calisanlar">
+                <ScalarProperty Name="calisanmaas" ColumnName="calisanmaas" />
+                <ScalarProperty Name="calisantel" ColumnName="calisantel" />
+                <ScalarProperty Name="calisansoyad" ColumnName="calisansoyad" />
+                <ScalarProperty Name="calisanad" ColumnName="calisanad" />
+                <ScalarProperty Name="CalisanID" ColumnName="CalisanID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanicilar">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.Kullanicilar">
+              <MappingFragment StoreEntitySet="Kullanicilar">
+                <ScalarProperty Name="KullaniciYetkisi" ColumnName="KullaniciYetkisi" />
+                <ScalarProperty Name="KullaniciSifresi" ColumnName="KullaniciSifresi" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="musteri">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.musteri">
+              <MappingFragment StoreEntitySet="musteri">
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="aracdigerucretler" ColumnName="aracdigerucretler" />
+                <ScalarProperty Name="aracdigerucretnedeni" ColumnName="aracdigerucretnedeni" />
+                <ScalarProperty Name="aracservisucreti" ColumnName="aracservisucreti" />
+                <ScalarProperty Name="aracyedekparcaucreti" ColumnName="aracyedekparcaucreti" />
+                <ScalarProperty Name="aractestsonucu" ColumnName="aractestsonucu" />
+                <ScalarProperty Name="aractestturu" ColumnName="aractestturu" />
+                <ScalarProperty Name="aracrenk" ColumnName="aracrenk" />
+                <ScalarProperty Name="arackmsi" ColumnName="arackmsi" />
+                <ScalarProperty Name="aracplakasi" ColumnName="aracplakasi" />
+                <ScalarProperty Name="aracmodeli" ColumnName="aracmodeli" />
+                <ScalarProperty Name="aracmarkasi" ColumnName="aracmarkasi" />
+                <ScalarProperty Name="aracadi" ColumnName="aracadi" />
+                <ScalarProperty Name="musteritelefon" ColumnName="musteritelefon" />
+                <ScalarProperty Name="musterisoyadi" ColumnName="musterisoyadi" />
+                <ScalarProperty Name="musteriadi" ColumnName="musteriadi" />
+                <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Paketler">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.Paketler">
+              <MappingFragment StoreEntitySet="Paketler">
+                <ScalarProperty Name="PaketAktifMi" ColumnName="PaketAktifMi" />
+                <ScalarProperty Name="PaketOlusturmaTarihi" ColumnName="PaketOlusturmaTarihi" />
+                <ScalarProperty Name="PaketiOlusturan" ColumnName="PaketiOlusturan" />
+                <ScalarProperty Name="PaketIcerik" ColumnName="PaketIcerik" />
+                <ScalarProperty Name="PaketAdi" ColumnName="PaketAdi" />
+                <ScalarProperty Name="PaketID" ColumnName="PaketID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Randevular">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.Randevular">
+              <MappingFragment StoreEntitySet="Randevular">
+                <ScalarProperty Name="Şube" ColumnName="Şube" />
+                <ScalarProperty Name="RandevuKodu" ColumnName="RandevuKodu" />
+                <ScalarProperty Name="islemTarihi" ColumnName="islemTarihi" />
+                <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+                <ScalarProperty Name="RandevuTarihi" ColumnName="RandevuTarihi" />
+                <ScalarProperty Name="MusteriTelefonu" ColumnName="MusteriTelefonu" />
+                <ScalarProperty Name="MusteriAdsoyad" ColumnName="MusteriAdsoyad" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Raporlar">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.Raporlar">
+              <MappingFragment StoreEntitySet="Raporlar">
+                <ScalarProperty Name="RaporAdresi" ColumnName="RaporAdresi" />
+                <ScalarProperty Name="RMusteriID" ColumnName="RMusteriID" />
+                <ScalarProperty Name="RaporID" ColumnName="RaporID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ARACBOYASONUC">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.TBL_ARACBOYASONUC">
+              <MappingFragment StoreEntitySet="TBL_ARACBOYASONUC">
+                <ScalarProperty Name="TestSonucu" ColumnName="TestSonucu" />
+                <ScalarProperty Name="Tavan" ColumnName="Tavan" />
+                <ScalarProperty Name="Kaput" ColumnName="Kaput" />
+                <ScalarProperty Name="Bagaj" ColumnName="Bagaj" />
+                <ScalarProperty Name="SagArkaCamurluk" ColumnName="SagArkaCamurluk" />
+                <ScalarProperty Name="SagArkaKapi" ColumnName="SagArkaKapi" />
+                <ScalarProperty Name="SagOnKapi" ColumnName="SagOnKapi" />
+                <ScalarProperty Name="SagOnCamurluk" ColumnName="SagOnCamurluk" />
+                <ScalarProperty Name="SolArkaCamurluk" ColumnName="SolArkaCamurluk" />
+                <ScalarProperty Name="SolArkaKapi" ColumnName="SolArkaKapi" />
+                <ScalarProperty Name="SolOnKapi" ColumnName="SolOnKapi" />
+                <ScalarProperty Name="SolOnCamurluk" ColumnName="SolOnCamurluk" />
+                <ScalarProperty Name="BoyaRaporID" ColumnName="BoyaRaporID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_BOYADEGERLERI">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.TBL_BOYADEGERLERI">
+              <MappingFragment StoreEntitySet="TBL_BOYADEGERLERI">
+                <ScalarProperty Name="SiraNo" ColumnName="SiraNo" />
+                <ScalarProperty Name="Deger" ColumnName="Deger" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_BOYAKONUMLARI">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.TBL_BOYAKONUMLARI">
+              <MappingFragment StoreEntitySet="TBL_BOYAKONUMLARI">
+                <ScalarProperty Name="KonumY" ColumnName="KonumY" />
+                <ScalarProperty Name="KonumX" ColumnName="KonumX" />
+                <ScalarProperty Name="KonumAdi" ColumnName="KonumAdi" />
+                <ScalarProperty Name="AracTipi" ColumnName="AracTipi" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_Firma_FK">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.TBL_Firma_FK">
+              <MappingFragment StoreEntitySet="TBL_Firma_FK">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+                <ScalarProperty Name="LisansID" ColumnName="LisansID" />
+                <ScalarProperty Name="FirmaID" ColumnName="FirmaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_Firmalar">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.TBL_Firmalar">
+              <MappingFragment StoreEntitySet="TBL_Firmalar">
+                <ScalarProperty Name="FirmaVersion" ColumnName="FirmaVersion" />
+                <ScalarProperty Name="FirmaIPAdress" ColumnName="FirmaIPAdress" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="FirmaLogo" ColumnName="FirmaLogo" />
+                <ScalarProperty Name="FirmaTelefon" ColumnName="FirmaTelefon" />
+                <ScalarProperty Name="FirmaAdres" ColumnName="FirmaAdres" />
+                <ScalarProperty Name="FirmaAdi" ColumnName="FirmaAdi" />
+                <ScalarProperty Name="FirmaNo" ColumnName="FirmaNo" />
+                <ScalarProperty Name="FirmaID" ColumnName="FirmaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_FirmaPCKeys">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.TBL_FirmaPCKeys">
+              <MappingFragment StoreEntitySet="TBL_FirmaPCKeys">
+                <ScalarProperty Name="LisansHakki" ColumnName="LisansHakki" />
+                <ScalarProperty Name="LisansSifresi" ColumnName="LisansSifresi" />
+                <ScalarProperty Name="LisansNo" ColumnName="LisansNo" />
+                <ScalarProperty Name="RegeditKey" ColumnName="RegeditKey" />
+                <ScalarProperty Name="MacAdress" ColumnName="MacAdress" />
+                <ScalarProperty Name="AnakartSerial" ColumnName="AnakartSerial" />
+                <ScalarProperty Name="HDDSerial" ColumnName="HDDSerial" />
+                <ScalarProperty Name="CPUID" ColumnName="CPUID" />
+                <ScalarProperty Name="LisansID" ColumnName="LisansID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_FK">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.TBL_FK">
+              <MappingFragment StoreEntitySet="TBL_FK">
+                <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+                <ScalarProperty Name="AracID" ColumnName="AracID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_iletisim">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.tbl_iletisim">
+              <MappingFragment StoreEntitySet="tbl_iletisim">
+                <ScalarProperty Name="islemTarihi" ColumnName="islemTarihi" />
+                <ScalarProperty Name="TakipKodu" ColumnName="TakipKodu" />
+                <ScalarProperty Name="mesaj" ColumnName="mesaj" />
+                <ScalarProperty Name="konu" ColumnName="konu" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="adsoyad" ColumnName="adsoyad" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_Kullanicilar">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.TBL_Kullanicilar">
+              <MappingFragment StoreEntitySet="TBL_Kullanicilar">
+                <ScalarProperty Name="Yetki" ColumnName="Yetki" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="KullaniciAdSoyad" ColumnName="KullaniciAdSoyad" />
+                <ScalarProperty Name="Parola" ColumnName="Parola" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_MUSTERIARACLARI">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.TBL_MUSTERIARACLARI">
+              <MappingFragment StoreEntitySet="TBL_MUSTERIARACLARI">
+                <ScalarProperty Name="BoyaRaporPath" ColumnName="BoyaRaporPath" />
+                <ScalarProperty Name="KullanimAltTipi" ColumnName="KullanimAltTipi" />
+                <ScalarProperty Name="KullanimKasaTipi" ColumnName="KullanimKasaTipi" />
+                <ScalarProperty Name="KullanimTuru" ColumnName="KullanimTuru" />
+                <ScalarProperty Name="EgsızMuayeneTarihi" ColumnName="EgsızMuayeneTarihi" />
+                <ScalarProperty Name="MuayeneTarihi" ColumnName="MuayeneTarihi" />
+                <ScalarProperty Name="VitesTipi" ColumnName="VitesTipi" />
+                <ScalarProperty Name="YakitTipi" ColumnName="YakitTipi" />
+                <ScalarProperty Name="SigortaTeklfi" ColumnName="SigortaTeklfi" />
+                <ScalarProperty Name="KaskoVarmi" ColumnName="KaskoVarmi" />
+                <ScalarProperty Name="MotorNo" ColumnName="MotorNo" />
+                <ScalarProperty Name="SasiNo" ColumnName="SasiNo" />
+                <ScalarProperty Name="Km" ColumnName="Km" />
+                <ScalarProperty Name="Renk" ColumnName="Renk" />
+                <ScalarProperty Name="ModelYili" ColumnName="ModelYili" />
+                <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+                <ScalarProperty Name="AltTipi" ColumnName="AltTipi" />
+                <ScalarProperty Name="MarkaveTip" ColumnName="MarkaveTip" />
+                <ScalarProperty Name="BoyaDegisenID" ColumnName="BoyaDegisenID" />
+                <ScalarProperty Name="MarkaID" ColumnName="MarkaID" />
+                <ScalarProperty Name="AracID" ColumnName="AracID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_MUSTERILER">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.TBL_MUSTERILER">
+              <MappingFragment StoreEntitySet="TBL_MUSTERILER">
+                <ScalarProperty Name="PaketIcerik" ColumnName="PaketIcerik" />
+                <ScalarProperty Name="PaketAdi" ColumnName="PaketAdi" />
+                <ScalarProperty Name="SaticiTcNo" ColumnName="SaticiTcNo" />
+                <ScalarProperty Name="AliciTcNo" ColumnName="AliciTcNo" />
+                <ScalarProperty Name="SaticiTelefon" ColumnName="SaticiTelefon" />
+                <ScalarProperty Name="SaticiıEmail" ColumnName="SaticiıEmail" />
+                <ScalarProperty Name="SaticiAdsoyad" ColumnName="SaticiAdsoyad" />
+                <ScalarProperty Name="AliciTelefon" ColumnName="AliciTelefon" />
+                <ScalarProperty Name="AliciEmail" ColumnName="AliciEmail" />
+                <ScalarProperty Name="AliciAdsoyad" ColumnName="AliciAdsoyad" />
+                <ScalarProperty Name="BarkodNo" ColumnName="BarkodNo" />
+                <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ODEMELER">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.TBL_ODEMELER">
+              <MappingFragment StoreEntitySet="TBL_ODEMELER">
+                <ScalarProperty Name="OdemeTarihi" ColumnName="OdemeTarihi" />
+                <ScalarProperty Name="OdemeTutari" ColumnName="OdemeTutari" />
+                <ScalarProperty Name="OdemeDurumu" ColumnName="OdemeDurumu" />
+                <ScalarProperty Name="OdemeSekli" ColumnName="OdemeSekli" />
+                <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+                <ScalarProperty Name="AracID" ColumnName="AracID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLARACSERISI">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.TBLARACSERISI">
+              <MappingFragment StoreEntitySet="TBLARACSERISI">
+                <ScalarProperty Name="SeriAdi" ColumnName="SeriAdi" />
+                <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+                <ScalarProperty Name="MarkaID" ColumnName="MarkaID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLARACVERSIYON">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.TBLARACVERSIYON">
+              <MappingFragment StoreEntitySet="TBLARACVERSIYON">
+                <ScalarProperty Name="VersiyonAdi" ColumnName="VersiyonAdi" />
+                <ScalarProperty Name="SeriID" ColumnName="SeriID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLMARKA">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.TBLMARKA">
+              <MappingFragment StoreEntitySet="TBLMARKA">
+                <ScalarProperty Name="MARKANAME" ColumnName="MARKANAME" />
+                <ScalarProperty Name="MARKAID" ColumnName="MARKAID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLMODEL">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.TBLMODEL">
+              <MappingFragment StoreEntitySet="TBLMODEL">
+                <ScalarProperty Name="MODELNAME" ColumnName="MODELNAME" />
+                <ScalarProperty Name="MARKAID" ColumnName="MARKAID" />
+                <ScalarProperty Name="MODELID" ColumnName="MODELID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Urunler">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.Urunler">
+              <MappingFragment StoreEntitySet="Urunler">
+                <ScalarProperty Name="UrunAlmaNedeni" ColumnName="UrunAlmaNedeni" />
+                <ScalarProperty Name="UrunAlanKisi" ColumnName="UrunAlanKisi" />
+                <ScalarProperty Name="UrunFiyati" ColumnName="UrunFiyati" />
+                <ScalarProperty Name="UrunTuru" ColumnName="UrunTuru" />
+                <ScalarProperty Name="UrunAdeti" ColumnName="UrunAdeti" />
+                <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+                <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebBoyaRapor">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.WebBoyaRapor">
+              <MappingFragment StoreEntitySet="WebBoyaRapor">
+                <ScalarProperty Name="MusteriAracMarkaModel" ColumnName="MusteriAracMarkaModel" />
+                <ScalarProperty Name="MusteriPlaka" ColumnName="MusteriPlaka" />
+                <ScalarProperty Name="MusteriAdiSoyadi" ColumnName="MusteriAdiSoyadi" />
+                <ScalarProperty Name="Bagaj" ColumnName="Bagaj" />
+                <ScalarProperty Name="Tavan" ColumnName="Tavan" />
+                <ScalarProperty Name="Kaput" ColumnName="Kaput" />
+                <ScalarProperty Name="SagArkaCamurluk" ColumnName="SagArkaCamurluk" />
+                <ScalarProperty Name="SolArkaCamurluk" ColumnName="SolArkaCamurluk" />
+                <ScalarProperty Name="SagArkaKapi" ColumnName="SagArkaKapi" />
+                <ScalarProperty Name="SolArkaKapi" ColumnName="SolArkaKapi" />
+                <ScalarProperty Name="SagOnKapi" ColumnName="SagOnKapi" />
+                <ScalarProperty Name="SolOnKapi" ColumnName="SolOnKapi" />
+                <ScalarProperty Name="SagOnCamurluk" ColumnName="SagOnCamurluk" />
+                <ScalarProperty Name="SolOnCamurluk" ColumnName="SolOnCamurluk" />
+                <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="yedekparcalistesi">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.yedekparcalistesi">
+              <MappingFragment StoreEntitySet="yedekparcalistesi">
+                <ScalarProperty Name="yparcaraporu" ColumnName="yparcaraporu" />
+                <ScalarProperty Name="iscilikucreti" ColumnName="iscilikucreti" />
+                <ScalarProperty Name="tornaucreti" ColumnName="tornaucreti" />
+                <ScalarProperty Name="tornafirmasi" ColumnName="tornafirmasi" />
+                <ScalarProperty Name="yedekparcaucret" ColumnName="yedekparcaucret" />
+                <ScalarProperty Name="yedekparcafirmasi" ColumnName="yedekparcafirmasi" />
+                <ScalarProperty Name="yedekparcaadeti" ColumnName="yedekparcaadeti" />
+                <ScalarProperty Name="yedekparcaadi" ColumnName="yedekparcaadi" />
+                <ScalarProperty Name="YedekSubID" ColumnName="YedekSubID" />
+                <ScalarProperty Name="YedekParcaID" ColumnName="YedekParcaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lisans">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.lisans">
+              <MappingFragment StoreEntitySet="lisans">
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="LisansTarihi" ColumnName="LisansTarihi" />
+                <ScalarProperty Name="LisansKey" ColumnName="LisansKey" />
+                <ScalarProperty Name="LisansFirmasi" ColumnName="LisansFirmasi" />
+                <ScalarProperty Name="LisansSahibi" ColumnName="LisansSahibi" />
+                <ScalarProperty Name="LisansID" ColumnName="LisansID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_YEDEKLER">
+            <EntityTypeMapping TypeName="OTOTEKDBModel.TBL_YEDEKLER">
+              <MappingFragment StoreEntitySet="TBL_YEDEKLER">
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
